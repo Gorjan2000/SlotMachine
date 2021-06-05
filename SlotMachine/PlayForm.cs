@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,18 +26,31 @@ namespace SlotMachine
         public int g { get; set; }
         public int h { get; set; }
         public int i { get; set; }
+
+       // string grozje = Path.GetFullPath(@"SlotMachine\Resources\grozje.png");
+        //string dzveza = Path.GetFullPath(@"SlotMachine\Resources\dzvezda.png");
+        //string limon = Path.GetFullPath(@"SlotMachine\Resources\limon.png");
+        //string dolar = Path.GetFullPath(@"SlotMachine\Resources\dolar.png");
+        //string watermelon = Path.GetFullPath(@"SlotMachine\Resources\watermelon.png");
+        //string jabuka = Path.GetFullPath(@"SlotMachine\Resources\jabuka.png");
+        //string cresa = Path.GetFullPath(@"SlotMachine\Resources\cresa.png");
+        //string seven = Path.GetFullPath(@"SlotMachine\Resources\seven.png");
+
+       
+       
         public PlayForm()
         {
+            
             InitializeComponent();
-            btnBET.Enabled = false;//5
-            //btnSPIN.Enabled = false;//2
-            btnBETPlus.Enabled = false;//6
-            btnBETMinus.Enabled = false;//7
-            btnINPUT.Enabled = false;//1
-            btnINPUTMinus.Enabled = false;//3
-            btnINPUTPlus.Enabled = false;//4
-            btnPAY.Enabled = false;//9
-                                   // btnWITH.Enabled = true;8
+            btnSPIN.Enabled = false;
+            btnBET.Enabled = false;
+            btnINPUTPlus.Enabled = false;
+            btnINPUTMinus.Enabled = false;
+            btnBETPlus.Enabled = false;
+            btnBETMinus.Enabled = false;
+            btnPAY.Enabled = false;
+            btnCASH.Enabled = false;
+
             random = new Random();
             credit = 50;
             bet = 5;
@@ -45,184 +59,299 @@ namespace SlotMachine
         }
 
 
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PlayForm_Load(object sender, EventArgs e)
         {
             timer1.Enabled = false;
         }
 
-        private void btnINPUT_Click(object sender, EventArgs e)
-        {
-            btnBETPlus.Enabled = false;//6
-            btnBETMinus.Enabled = false;//7
-            btnPAY.Enabled = false;//9
-            btnWITH.Enabled = true;//8
-            timer1.Enabled = true;
-            timer1.Interval = 50;
-
-        }
-
         private void btnSPIN_Click(object sender, EventArgs e)
         {
-            credit = 50;
-            infolbl.Text = "CREDIT: " + "50 $";
-
-
-            btnINPUTMinus.Enabled = true;//3
-            btnPAY.Enabled = true;//9
-            btnSPIN.Enabled = true;
-
+           
+            btnBETPlus.Enabled = false;
+            btnBETMinus.Enabled = false;
+            btnPAY.Enabled = false;
+            btnCASH.Enabled = true;
+            timer1.Enabled = true;
+            timer1.Interval = 50;
         }
 
-        private void btnINPUTMinus_Click(object sender, EventArgs e)
-        {
-            credit++;
-            infolbl.Text = "CREDIT: " + credit.ToString() + " $";
-            btnPAY.Enabled = true;//9
-            btnINPUTPlus.Enabled = true;//4
-        }
 
-        private void btnINPUTPlus_Click(object sender, EventArgs e)
-        {
-            if ((credit > 0) && (bet < credit)) credit--;
-            if (credit >= 0)
-                infolbl.Text = "CREDIT: " + credit.ToString() + " $";
-            if (credit == 0)
-            {
-                btnINPUT.Enabled = false;
-                btnPAY.Enabled = false;
-            }
-            if (credit == 5) btnINPUTPlus.Enabled = false;
-        }
 
-        private void btnBET_Click(object sender, EventArgs e)
-        {
-            if ((bet <= credit) && (bet > 0)) btnSPIN.Enabled = true;
-            btnBETPlus.Enabled = true;
-            btnBETMinus.Enabled = true;
-            betlbl.Text = "BET: " + bet.ToString() + " $";
-        }
-        private void btnBETPlus_Click(object sender, EventArgs e)
-        {
-            if (bet < credit)
-            {
-                btnBET.Enabled = true;
-                bet++;
-                betlbl.Text = "BET: " + bet.ToString() + " $";
-            }
-            btnBETMinus.Enabled = true;
-        }
 
-        private void btnBETMinus_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            if (bet > 0) bet--;
-            if (bet <= credit) btnINPUT.Enabled = true;
-            betlbl.Text = "BET: " + bet.ToString() + " $";
-            if (bet == 0)
-            {
-                btnINPUT.Enabled = false;
-                btnBETMinus.Enabled = false;
-            }
-        }
-
-        private void btnPAY_Click(object sender, EventArgs e)
-        {
-            btnSPIN.Enabled = false;
-            btnINPUTMinus.Enabled = false;//inputminus
-            btnINPUTPlus.Enabled = false;//inputplus
-            btnPAY.Enabled = false;//pay
-            btnBET.Enabled = true;//bet
-        }
-
-        private void btnWITH_Click(object sender, EventArgs e)
-        {
-            DialogResult result1 = MessageBox.Show("Vi blagodarime!\n Dali mozebi sakate povtorno da igrate?", "Kraj na igrata", MessageBoxButtons.YesNo);
-            if (result1 == DialogResult.Yes)
-            {
-                btnINPUT.Enabled = false;
-                btnBET.Enabled = false;
-                btnINPUTMinus.Enabled = false;
-                btnINPUTPlus.Enabled = false;
-                btnBETPlus.Enabled = false;
-                btnBETMinus.Enabled = false;
-                btnPAY.Enabled = false;
-                btnWITH.Enabled = false;
-                btnSPIN.Enabled = true;
-                credit = 50;
-                bet = 5;
-                infolbl.Text = "CREDIT: ";
-                betlbl.Text = "BET: ";
-                lblMsg.Text = "";
-            }
-            else Application.Exit();
+            timer1.Enabled = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timerCount += 10;
+            
+            timerCount = timerCount + 10;
             if (timerCount < 100)
             {
-
-                a = 1 + random.Next(9);
-
+                
+                a = 1+random.Next(9);
                 b = 1 + random.Next(9);
-
                 c = 1 + random.Next(9);
                 d = 1 + random.Next(9);
-                j = 1 + random.Next(9);
                 f = 1 + random.Next(9);
                 g = 1 + random.Next(9);
                 h = 1 + random.Next(9);
                 i = 1 + random.Next(9);
-
+                j = 1 + random.Next(9);
+                
 
                 switch (a)
                 {
                     case 1:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\grapes-512.png");
+                        pb1.Image = Properties.Resources.cresa;
                         break;
                     case 2:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\grapes-512.png");
+                        pb1.Image = Properties.Resources.dolar;
                         break;
                     case 3:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\grapes-512.png");
+                        pb1.Image = Properties.Resources.jabuka;
                         break;
+                    case 4:
+                        pb1.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb1.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb1.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb1.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb1.Image = Properties.Resources.watermelon;
+                        break;
+                   
 
                 }
 
                 switch (b)
                 {
                     case 1:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\casino_7-512 (1).png");
+                        pb2.Image = Properties.Resources.cresa;
                         break;
                     case 2:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\casino_7-512 (1).png");
+                        pb2.Image = Properties.Resources.dolar;
                         break;
                     case 3:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\casino_7-512 (1).png");
+                        pb2.Image = Properties.Resources.jabuka;
+                        break;
+                    case 4:
+                        pb2.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb2.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb2.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb2.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb2.Image = Properties.Resources.watermelon;
                         break;
 
                 }
                 switch (c)
                 {
                     case 1:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\casino_7-512 (1).png");
+                        pb3.Image = Properties.Resources.cresa;
                         break;
                     case 2:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\casino_7-512 (1).png");
+                        pb3.Image = Properties.Resources.dolar;
                         break;
                     case 3:
-                        pb1.Image = Bitmap.FromFile(@"..\SlotMachine\Resources\casino_7-512 (1).png");
+                        pb3.Image = Properties.Resources.jabuka;
+                        break;
+                    case 4:
+                        pb3.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb3.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb3.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb3.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb3.Image = Properties.Resources.watermelon;
+                        break;
+
+                }
+                switch (d)
+                {
+                    case 1:
+                        pb4.Image = Properties.Resources.cresa;
+                        break;
+                    case 2:
+                        pb4.Image = Properties.Resources.dolar;
+                        break;
+                    case 3:
+                        pb4.Image = Properties.Resources.jabuka;
+                        break;
+                    case 4:
+                        pb4.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb4.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb4.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb4.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb4.Image = Properties.Resources.watermelon;
+                        break;
+
+                }
+                switch (f)
+                {
+                    case 1:
+                        pb5.Image = Properties.Resources.cresa;
+                        break;
+                    case 2:
+                        pb5.Image = Properties.Resources.dolar;
+                        break;
+                    case 3:
+                        pb5.Image = Properties.Resources.jabuka;
+                        break;
+                    case 4:
+                        pb5.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb5.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb5.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb5.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb5.Image = Properties.Resources.watermelon;
+                        break;
+
+                }
+                switch (g)
+                {
+                    case 1:
+                        pb6.Image = Properties.Resources.cresa;
+                        break;
+                    case 2:
+                        pb6.Image = Properties.Resources.dolar;
+                        break;
+                    case 3:
+                        pb6.Image = Properties.Resources.jabuka;
+                        break;
+                    case 4:
+                        pb6.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb6.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb6.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb6.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb6.Image = Properties.Resources.watermelon;
+                        break;
+
+                }
+                switch (h)
+                {
+                    case 1:
+                        pb7.Image = Properties.Resources.cresa;
+                        break;
+                    case 2:
+                        pb7.Image = Properties.Resources.dolar;
+                        break;
+                    case 3:
+                        pb7.Image = Properties.Resources.jabuka;
+                        break;
+                    case 4:
+                        pb7.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb7.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb7.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb7.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb7.Image = Properties.Resources.watermelon;
+                        break;
+
+                }
+                switch (i)
+                {
+                    case 1:
+                        pb8.Image = Properties.Resources.cresa;
+                        break;
+                    case 2:
+                        pb8.Image = Properties.Resources.dolar;
+                        break;
+                    case 3:
+                        pb8.Image = Properties.Resources.jabuka;
+                        break;
+                    case 4:
+                        pb8.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb8.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb8.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb8.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb8.Image = Properties.Resources.watermelon;
+                        break;
+
+                }
+                switch (j)
+                {
+                    case 1:
+                        pb9.Image = Properties.Resources.cresa;
+                        break;
+                    case 2:
+                        pb9.Image = Properties.Resources.dolar;
+                        break;
+                    case 3:
+                        pb9.Image = Properties.Resources.jabuka;
+                        break;
+                    case 4:
+                        pb9.Image = Properties.Resources.limon;
+                        break;
+                    case 5:
+                        pb9.Image = Properties.Resources.grozje;
+                        break;
+                    case 6:
+                        pb9.Image = Properties.Resources.dzvezda;
+                        break;
+                    case 7:
+                        pb9.Image = Properties.Resources.seven;
+                        break;
+                    case 8:
+                        pb9.Image = Properties.Resources.watermelon;
                         break;
 
                 }
@@ -230,6 +359,7 @@ namespace SlotMachine
             }
             else
             {
+                
                 timer1.Enabled = false;
                 timerCount = 0;
                 if ((a == b) && (a == c))
@@ -246,13 +376,14 @@ namespace SlotMachine
                     infolbl.Text = "CREDIT: " + credit.ToString() + " $";
                     if (credit < bet)
                     {
-                        btnINPUT.Enabled = false;
+                        btnSPIN.Enabled = false;
 
                     }
-                    if (credit == 0)
+                    if (credit <= 0)
                     {
-                        btnSPIN.Enabled = true;
-                        btnWITH.Enabled = false;
+                        MessageBox.Show("You don't have enough credits to play!", "Game Over");
+                        btnSPIN.Enabled = false;
+                        btnCASH.Enabled = true;
                         btnBET.Enabled = false;
 
                     }
@@ -260,5 +391,119 @@ namespace SlotMachine
 
             }
         }
+        private void btnINPUT_Click(object sender, EventArgs e)
+        {
+            credit = 50;
+            infolbl.Text = "CREDIT: " + "50 $";
+
+            btnINPUTPlus.Enabled = true;
+
+            btnPAY.Enabled = true;
+            btnINPUT.Enabled = false;
+
+
+        }
+
+
+
+        private void btnINPUTPlus_Click(object sender, EventArgs e)
+        {
+            credit++;
+            infolbl.Text = "CREDIT: " + credit.ToString() + " $";
+            btnPAY.Enabled = true;
+            btnINPUTMinus.Enabled = true;
+
+        }
+
+        private void btnINPUTMinus_Click(object sender, EventArgs e)
+        {
+            if ((credit > 0) && (bet < credit)) credit--;
+            if (credit >= 0)
+                infolbl.Text = "CREDIT: " + credit.ToString() + " $";
+            if (credit == 0)
+            {
+                btnSPIN.Enabled = false;
+                btnPAY.Enabled = false;
+            }
+            if (credit == 5) btnINPUTMinus.Enabled = false;
+
+
+        }
+
+        private void btnBET_Click(object sender, EventArgs e)
+        {
+            if ((bet <= credit) && (bet > 0)) btnSPIN.Enabled = true;
+            btnBETPlus.Enabled = true;
+            btnBETMinus.Enabled = true;
+            betlbl.Text = "BET: " + bet.ToString() + " $";
+
+
+
+
+        }
+
+        private void btnBETMinus_Click(object sender, EventArgs e)
+        {
+            if (bet > 0) bet--;
+            if (bet <= credit) btnSPIN.Enabled = true;
+            betlbl.Text = "BET: " + bet.ToString() + " $";
+            if (bet == 0)
+            {
+                btnSPIN.Enabled = false;
+                btnBETMinus.Enabled = false;
+            }
+
+
+
+        }
+
+        private void btnBETPlus_Click(object sender, EventArgs e)
+        {
+            if (bet < credit)
+            {
+                btnSPIN.Enabled = true;
+                bet++;
+                betlbl.Text = "BET: " + bet.ToString() + " $";
+            }
+            btnBETMinus.Enabled = true;
+
+        }
+
+        private void btnPAY_Click(object sender, EventArgs e)
+        {
+
+            btnINPUT.Enabled = false;
+            btnINPUTPlus.Enabled = false;
+            btnINPUTMinus.Enabled = false;
+            btnPAY.Enabled = false;
+            btnBET.Enabled = true;
+
+        }
+
+        private void btnCASH_Click(object sender, EventArgs e)
+        {
+            DialogResult result1 = MessageBox.Show("Thank you for playing!\n Would you like to play again?", "End of game", MessageBoxButtons.YesNo);
+            if (result1 == DialogResult.Yes)
+            {
+                btnSPIN.Enabled = false;
+                btnBET.Enabled = false;
+                btnINPUTPlus.Enabled = false;
+                btnINPUTMinus.Enabled = false;
+                btnBETPlus.Enabled = false;
+                btnBETMinus.Enabled = false;
+                btnPAY.Enabled = false;
+                btnCASH.Enabled = false;
+                btnINPUT.Enabled = true;
+                credit = 50;
+                bet = 5;
+                infolbl.Text = "CREDIT: ";
+                betlbl.Text = "BET: ";
+                lblMsg.Text = "";
+            }
+            else Application.Exit();
+
+        }
+
+       
     }
 }
