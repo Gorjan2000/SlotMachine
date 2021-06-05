@@ -67,39 +67,37 @@ namespace SlotMachine
             // 
             this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(278, 47);
+            this.pictureBox9.Location = new System.Drawing.Point(208, 38);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(804, 520);
+            this.pictureBox9.Size = new System.Drawing.Size(603, 422);
             this.pictureBox9.TabIndex = 14;
             this.pictureBox9.TabStop = false;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(552, 742);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(414, 603);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(240, 84);
+            this.button2.Size = new System.Drawing.Size(180, 68);
             this.button2.TabIndex = 16;
             this.button2.Text = "SPIN";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(360, 744);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(270, 604);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 82);
+            this.button1.Size = new System.Drawing.Size(75, 67);
             this.button1.TabIndex = 17;
             this.button1.Text = "INPUT MONEY";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(468, 792);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(351, 644);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(36, 34);
+            this.button4.Size = new System.Drawing.Size(27, 28);
             this.button4.TabIndex = 19;
             this.button4.Text = "-";
             this.button4.UseVisualStyleBackColor = true;
@@ -107,30 +105,27 @@ namespace SlotMachine
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(468, 744);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(351, 604);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(36, 32);
+            this.button3.Size = new System.Drawing.Size(27, 26);
             this.button3.TabIndex = 18;
             this.button3.Text = "+";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(360, 708);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Location = new System.Drawing.Point(270, 575);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(100, 28);
+            this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 20;
             this.button9.Text = "PAY TABLE";
             this.button9.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(949, 792);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(712, 644);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(36, 34);
+            this.button7.Size = new System.Drawing.Size(27, 28);
             this.button7.TabIndex = 23;
             this.button7.Text = "-";
             this.button7.UseVisualStyleBackColor = true;
@@ -138,20 +133,18 @@ namespace SlotMachine
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.Location = new System.Drawing.Point(949, 744);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Location = new System.Drawing.Point(712, 604);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(36, 32);
+            this.button6.Size = new System.Drawing.Size(27, 26);
             this.button6.TabIndex = 22;
             this.button6.Text = "+";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(841, 744);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(631, 604);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 82);
+            this.button5.Size = new System.Drawing.Size(75, 67);
             this.button5.TabIndex = 21;
             this.button5.Text = "BET";
             this.button5.UseVisualStyleBackColor = true;
@@ -159,10 +152,9 @@ namespace SlotMachine
             // lblMsg
             // 
             this.lblMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMsg.Location = new System.Drawing.Point(552, 648);
-            this.lblMsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMsg.Location = new System.Drawing.Point(414, 526);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(240, 49);
+            this.lblMsg.Size = new System.Drawing.Size(180, 40);
             this.lblMsg.TabIndex = 24;
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -170,10 +162,9 @@ namespace SlotMachine
             // 
             this.betlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.betlbl.ForeColor = System.Drawing.Color.Red;
-            this.betlbl.Location = new System.Drawing.Point(1089, 651);
-            this.betlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.betlbl.Location = new System.Drawing.Point(817, 529);
             this.betlbl.Name = "betlbl";
-            this.betlbl.Size = new System.Drawing.Size(227, 37);
+            this.betlbl.Size = new System.Drawing.Size(170, 30);
             this.betlbl.TabIndex = 26;
             this.betlbl.Text = "BET: ";
             // 
@@ -181,93 +172,101 @@ namespace SlotMachine
             // 
             this.infolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.infolbl.ForeColor = System.Drawing.Color.Red;
-            this.infolbl.Location = new System.Drawing.Point(30, 651);
-            this.infolbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.infolbl.Location = new System.Drawing.Point(22, 529);
             this.infolbl.Name = "infolbl";
-            this.infolbl.Size = new System.Drawing.Size(227, 37);
+            this.infolbl.Size = new System.Drawing.Size(170, 30);
             this.infolbl.TabIndex = 25;
             this.infolbl.Text = "CREDIT: ";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(302, 68);
+            this.pictureBox1.Location = new System.Drawing.Point(226, 55);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox1.Size = new System.Drawing.Size(171, 121);
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(302, 235);
+            this.pictureBox2.Location = new System.Drawing.Point(226, 191);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox2.Size = new System.Drawing.Size(171, 121);
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(302, 402);
+            this.pictureBox3.Location = new System.Drawing.Point(226, 327);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox3.Size = new System.Drawing.Size(171, 121);
             this.pictureBox3.TabIndex = 29;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(564, 402);
+            this.pictureBox4.Location = new System.Drawing.Point(423, 327);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox4.Size = new System.Drawing.Size(171, 121);
             this.pictureBox4.TabIndex = 30;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(564, 68);
+            this.pictureBox5.Location = new System.Drawing.Point(423, 55);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox5.Size = new System.Drawing.Size(171, 121);
             this.pictureBox5.TabIndex = 30;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(564, 235);
+            this.pictureBox6.Location = new System.Drawing.Point(423, 191);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox6.Size = new System.Drawing.Size(171, 121);
             this.pictureBox6.TabIndex = 31;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(827, 68);
+            this.pictureBox7.Location = new System.Drawing.Point(620, 55);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox7.Size = new System.Drawing.Size(171, 121);
             this.pictureBox7.TabIndex = 32;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(827, 235);
+            this.pictureBox8.Location = new System.Drawing.Point(620, 191);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox8.Size = new System.Drawing.Size(171, 121);
             this.pictureBox8.TabIndex = 33;
             this.pictureBox8.TabStop = false;
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(827, 402);
+            this.pictureBox10.Location = new System.Drawing.Point(620, 327);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(228, 149);
+            this.pictureBox10.Size = new System.Drawing.Size(171, 121);
             this.pictureBox10.TabIndex = 34;
             this.pictureBox10.TabStop = false;
             // 
             // PlayForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1345, 877);
+            this.ClientSize = new System.Drawing.Size(1009, 609);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
@@ -291,8 +290,10 @@ namespace SlotMachine
             this.Controls.Add(this.pictureBox9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PlayForm";
             this.Text = "PlayForm";
+            this.Load += new System.EventHandler(this.PlayForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

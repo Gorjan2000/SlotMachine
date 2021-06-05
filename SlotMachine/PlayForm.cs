@@ -12,6 +12,7 @@ namespace SlotMachine
 {
     public partial class PlayForm : Form
     {
+        public int m { get; set; }
         public PlayForm()
         {
             InitializeComponent();
@@ -23,6 +24,11 @@ namespace SlotMachine
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayForm_Load(object sender, EventArgs e)
         {
 
         }
