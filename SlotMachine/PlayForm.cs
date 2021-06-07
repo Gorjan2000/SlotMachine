@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Media;
 using System.Windows.Forms;
 
 namespace SlotMachine
@@ -75,6 +69,7 @@ namespace SlotMachine
             btnCASH.Enabled = true;
             timer1.Enabled = true;
             timer1.Interval = 50;
+            playRollingSound();
         }
 
 
@@ -89,7 +84,7 @@ namespace SlotMachine
         {
             
             timerCount = timerCount + 10;
-            if (timerCount < 100)
+            if (timerCount < 250)
             {
                 
                 a = 1+random.Next(9);
@@ -366,8 +361,9 @@ namespace SlotMachine
                 timerCount = 0;
                 if ((a == b) && (a == c))
                 {
+                    playWinSound();
                     lblMsg.Text = "Jackpot! You won " + (2 * bet).ToString() + " $!!!";
-                    credit = credit + bet;
+                    credit = credit + 2*bet;
                     infolbl.Text = "CREDIT: " + credit.ToString() + " $";
 
                 }
@@ -521,12 +517,38 @@ namespace SlotMachine
 
         }
 
-      
+        private void playRollingSound()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string rolling1 = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\SlotMachine\Resources\rolling1.wav");
+            string rolling_path = Path.GetFullPath(rolling1);
+
+            string rolling2 = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\SlotMachine\Resources\rolling2.wav");
+            string rolling2_path = Path.GetFullPath(rolling2);
+
+            SoundPlayer tapSound = new SoundPlayer(rolling_path);
+            tapSound.Play();
+            SoundPlayer rollSound = new SoundPlayer(rolling2_path);
+            rollSound.Play();
+        }
+
+        private void playWinSound()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string dobivka = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\SlotMachine\Resources\dobivka.wav");
+            string dobivka_path = Path.GetFullPath(dobivka);
+
+            SoundPlayer winSound = new SoundPlayer(dobivka_path);
+            winSound.Play();
+           
+        }
+
 
         private void btnAutoSpin_Click(object sender, EventArgs e)
         {
             timer2.Interval = 400;
-            if(credit==0 || credit<bet)
+            
+            if (credit==0 || credit<bet)
             {
                 timer2.Stop();
                 timerFlag = false;
