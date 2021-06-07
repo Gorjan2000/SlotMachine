@@ -26,8 +26,9 @@ namespace SlotMachine
         public int g { get; set; }
         public int h { get; set; }
         public int i { get; set; }
+        public bool timerFlag { get; set; }
 
-       // string grozje = Path.GetFullPath(@"SlotMachine\Resources\grozje.png");
+        // string grozje = Path.GetFullPath(@"SlotMachine\Resources\grozje.png");
         //string dzveza = Path.GetFullPath(@"SlotMachine\Resources\dzvezda.png");
         //string limon = Path.GetFullPath(@"SlotMachine\Resources\limon.png");
         //string dolar = Path.GetFullPath(@"SlotMachine\Resources\dolar.png");
@@ -36,8 +37,8 @@ namespace SlotMachine
         //string cresa = Path.GetFullPath(@"SlotMachine\Resources\cresa.png");
         //string seven = Path.GetFullPath(@"SlotMachine\Resources\seven.png");
 
-       
-       
+
+
         public PlayForm()
         {
             
@@ -50,7 +51,8 @@ namespace SlotMachine
             btnBETMinus.Enabled = false;
             btnPAY.Enabled = false;
             btnCASH.Enabled = false;
-
+            btnAutoSpin.Enabled = false;
+            timerFlag = false;
             random = new Random();
             credit = 50;
             bet = 5;
@@ -66,7 +68,7 @@ namespace SlotMachine
 
         private void btnSPIN_Click(object sender, EventArgs e)
         {
-           
+            
             btnBETPlus.Enabled = false;
             btnBETMinus.Enabled = false;
             btnPAY.Enabled = false;
@@ -377,6 +379,8 @@ namespace SlotMachine
                     if (credit < bet)
                     {
                         btnSPIN.Enabled = false;
+                        btnAutoSpin.Enabled = false;
+                        timer2.Stop();
 
                     }
                     if (credit <= 0)
@@ -385,7 +389,8 @@ namespace SlotMachine
                         btnSPIN.Enabled = false;
                         btnCASH.Enabled = true;
                         btnBET.Enabled = false;
-
+                        btnAutoSpin.Enabled = false;
+                        timer2.Stop();
                     }
                 }
 
@@ -423,6 +428,7 @@ namespace SlotMachine
             if (credit == 0)
             {
                 btnSPIN.Enabled = false;
+                btnAutoSpin.Enabled = false;
                 btnPAY.Enabled = false;
             }
             if (credit == 5) btnINPUTMinus.Enabled = false;
@@ -432,7 +438,11 @@ namespace SlotMachine
 
         private void btnBET_Click(object sender, EventArgs e)
         {
-            if ((bet <= credit) && (bet > 0)) btnSPIN.Enabled = true;
+            if ((bet <= credit) && (bet > 0))
+            {
+                btnSPIN.Enabled = true;
+                btnAutoSpin.Enabled = true;
+            }
             btnBETPlus.Enabled = true;
             btnBETMinus.Enabled = true;
             betlbl.Text = "BET: " + bet.ToString() + " $";
@@ -445,11 +455,16 @@ namespace SlotMachine
         private void btnBETMinus_Click(object sender, EventArgs e)
         {
             if (bet > 0) bet--;
-            if (bet <= credit) btnSPIN.Enabled = true;
+            if (bet <= credit)
+            {
+                btnSPIN.Enabled = true;
+                btnAutoSpin.Enabled = true;
+            } 
             betlbl.Text = "BET: " + bet.ToString() + " $";
             if (bet == 0)
             {
                 btnSPIN.Enabled = false;
+                btnAutoSpin.Enabled = false;
                 btnBETMinus.Enabled = false;
             }
 
@@ -462,6 +477,7 @@ namespace SlotMachine
             if (bet < credit)
             {
                 btnSPIN.Enabled = true;
+                btnAutoSpin.Enabled = true;
                 bet++;
                 betlbl.Text = "BET: " + bet.ToString() + " $";
             }
@@ -486,6 +502,7 @@ namespace SlotMachine
             if (result1 == DialogResult.Yes)
             {
                 btnSPIN.Enabled = false;
+                btnAutoSpin.Enabled = false;
                 btnBET.Enabled = false;
                 btnINPUTPlus.Enabled = false;
                 btnINPUTMinus.Enabled = false;
@@ -504,6 +521,31 @@ namespace SlotMachine
 
         }
 
-       
+      
+
+        private void btnAutoSpin_Click(object sender, EventArgs e)
+        {
+            timer2.Interval = 400;
+            if(credit==0 || credit<bet)
+            {
+                timer2.Stop();
+                timerFlag = false;
+            }
+            if(!timerFlag)
+            {
+                timerFlag = true;
+                timer2.Start();
+            }
+            else
+            {
+                timerFlag = false;
+                timer2.Stop();
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            btnSPIN_Click(sender, e);
+        }
     }
 }

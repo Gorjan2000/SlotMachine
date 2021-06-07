@@ -54,6 +54,8 @@ namespace SlotMachine
             this.pb9 = new System.Windows.Forms.PictureBox();
             this.btnCASH = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnAutoSpin = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
@@ -318,6 +320,24 @@ namespace SlotMachine
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnAutoSpin
+            // 
+            this.btnAutoSpin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAutoSpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutoSpin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAutoSpin.Location = new System.Drawing.Point(1147, 598);
+            this.btnAutoSpin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAutoSpin.Name = "btnAutoSpin";
+            this.btnAutoSpin.Size = new System.Drawing.Size(145, 106);
+            this.btnAutoSpin.TabIndex = 37;
+            this.btnAutoSpin.Text = "AUTO SPIN";
+            this.btnAutoSpin.UseVisualStyleBackColor = false;
+            this.btnAutoSpin.Click += new System.EventHandler(this.btnAutoSpin_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // PlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -325,6 +345,7 @@ namespace SlotMachine
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1345, 750);
+            this.Controls.Add(this.btnAutoSpin);
             this.Controls.Add(this.btnCASH);
             this.Controls.Add(this.pb9);
             this.Controls.Add(this.pb6);
@@ -392,5 +413,7 @@ namespace SlotMachine
         private System.Windows.Forms.PictureBox pb9;
         private System.Windows.Forms.Button btnCASH;
         private System.Windows.Forms.Timer timer1;
+        internal System.Windows.Forms.Button btnAutoSpin;
+        private System.Windows.Forms.Timer timer2;
     }
 }

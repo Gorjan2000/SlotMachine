@@ -113,5 +113,8 @@
   <ItemGroup>
     <None Include="Resources\watermelon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SLOT-Machine-handle.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
