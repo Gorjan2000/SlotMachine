@@ -89,8 +89,8 @@ namespace SlotMachine
             this.btnSPIN.BackColor = System.Drawing.Color.LimeGreen;
             this.btnSPIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSPIN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSPIN.Location = new System.Drawing.Point(1172, 590);
-            this.btnSPIN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSPIN.Location = new System.Drawing.Point(1134, 592);
+            this.btnSPIN.Margin = new System.Windows.Forms.Padding(4);
             this.btnSPIN.Name = "btnSPIN";
             this.btnSPIN.Size = new System.Drawing.Size(145, 106);
             this.btnSPIN.TabIndex = 16;
@@ -100,91 +100,112 @@ namespace SlotMachine
             // 
             // btnINPUT
             // 
+            this.btnINPUT.BackColor = System.Drawing.Color.White;
+            this.btnINPUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnINPUT.ForeColor = System.Drawing.Color.Black;
             this.btnINPUT.Location = new System.Drawing.Point(11, 22);
-            this.btnINPUT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnINPUT.Margin = new System.Windows.Forms.Padding(4);
             this.btnINPUT.Name = "btnINPUT";
             this.btnINPUT.Size = new System.Drawing.Size(127, 82);
             this.btnINPUT.TabIndex = 17;
             this.btnINPUT.Text = "INPUT MONEY";
-            this.btnINPUT.UseVisualStyleBackColor = true;
+            this.btnINPUT.UseVisualStyleBackColor = false;
             this.btnINPUT.Click += new System.EventHandler(this.btnINPUT_Click);
             // 
             // btnINPUTMinus
             // 
+            this.btnINPUTMinus.BackColor = System.Drawing.Color.Green;
+            this.btnINPUTMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnINPUTMinus.ForeColor = System.Drawing.Color.White;
             this.btnINPUTMinus.Location = new System.Drawing.Point(146, 70);
-            this.btnINPUTMinus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnINPUTMinus.Margin = new System.Windows.Forms.Padding(4);
             this.btnINPUTMinus.Name = "btnINPUTMinus";
             this.btnINPUTMinus.Size = new System.Drawing.Size(36, 34);
             this.btnINPUTMinus.TabIndex = 19;
             this.btnINPUTMinus.Text = "-";
-            this.btnINPUTMinus.UseVisualStyleBackColor = true;
+            this.btnINPUTMinus.UseVisualStyleBackColor = false;
             this.btnINPUTMinus.Click += new System.EventHandler(this.btnINPUTMinus_Click);
             // 
             // btnINPUTPlus
             // 
-            this.btnINPUTPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnINPUTPlus.BackColor = System.Drawing.Color.Maroon;
+            this.btnINPUTPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnINPUTPlus.ForeColor = System.Drawing.Color.White;
             this.btnINPUTPlus.Location = new System.Drawing.Point(146, 22);
-            this.btnINPUTPlus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnINPUTPlus.Margin = new System.Windows.Forms.Padding(4);
             this.btnINPUTPlus.Name = "btnINPUTPlus";
             this.btnINPUTPlus.Size = new System.Drawing.Size(36, 32);
             this.btnINPUTPlus.TabIndex = 18;
             this.btnINPUTPlus.Text = "+";
-            this.btnINPUTPlus.UseVisualStyleBackColor = true;
+            this.btnINPUTPlus.UseVisualStyleBackColor = false;
             this.btnINPUTPlus.Click += new System.EventHandler(this.btnINPUTPlus_Click);
             // 
             // btnPAY
             // 
+            this.btnPAY.BackColor = System.Drawing.Color.White;
+            this.btnPAY.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPAY.ForeColor = System.Drawing.Color.Black;
             this.btnPAY.Location = new System.Drawing.Point(213, 43);
-            this.btnPAY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPAY.Margin = new System.Windows.Forms.Padding(4);
             this.btnPAY.Name = "btnPAY";
             this.btnPAY.Size = new System.Drawing.Size(100, 41);
             this.btnPAY.TabIndex = 20;
             this.btnPAY.Text = "PAY TABLE";
-            this.btnPAY.UseVisualStyleBackColor = true;
+            this.btnPAY.UseVisualStyleBackColor = false;
             this.btnPAY.Click += new System.EventHandler(this.btnPAY_Click);
             // 
             // btnBETMinus
             // 
+            this.btnBETMinus.BackColor = System.Drawing.Color.Green;
+            this.btnBETMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBETMinus.ForeColor = System.Drawing.Color.White;
             this.btnBETMinus.Location = new System.Drawing.Point(847, 70);
-            this.btnBETMinus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBETMinus.Margin = new System.Windows.Forms.Padding(4);
             this.btnBETMinus.Name = "btnBETMinus";
             this.btnBETMinus.Size = new System.Drawing.Size(36, 34);
             this.btnBETMinus.TabIndex = 23;
             this.btnBETMinus.Text = "-";
-            this.btnBETMinus.UseVisualStyleBackColor = true;
+            this.btnBETMinus.UseVisualStyleBackColor = false;
             this.btnBETMinus.Click += new System.EventHandler(this.btnBETMinus_Click);
             // 
             // btnBETPlus
             // 
-            this.btnBETPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnBETPlus.BackColor = System.Drawing.Color.Maroon;
+            this.btnBETPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnBETPlus.ForeColor = System.Drawing.Color.White;
             this.btnBETPlus.Location = new System.Drawing.Point(847, 22);
-            this.btnBETPlus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBETPlus.Margin = new System.Windows.Forms.Padding(4);
             this.btnBETPlus.Name = "btnBETPlus";
             this.btnBETPlus.Size = new System.Drawing.Size(36, 32);
             this.btnBETPlus.TabIndex = 22;
             this.btnBETPlus.Text = "+";
-            this.btnBETPlus.UseVisualStyleBackColor = true;
+            this.btnBETPlus.UseVisualStyleBackColor = false;
             this.btnBETPlus.Click += new System.EventHandler(this.btnBETPlus_Click);
             // 
             // btnBET
             // 
+            this.btnBET.BackColor = System.Drawing.Color.White;
+            this.btnBET.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBET.ForeColor = System.Drawing.Color.Black;
             this.btnBET.Location = new System.Drawing.Point(719, 22);
-            this.btnBET.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBET.Margin = new System.Windows.Forms.Padding(4);
             this.btnBET.Name = "btnBET";
             this.btnBET.Size = new System.Drawing.Size(120, 82);
             this.btnBET.TabIndex = 21;
             this.btnBET.Text = "BET";
-            this.btnBET.UseVisualStyleBackColor = true;
+            this.btnBET.UseVisualStyleBackColor = false;
             this.btnBET.Click += new System.EventHandler(this.btnBET_Click);
             // 
             // lblMsg
             // 
+            this.lblMsg.BackColor = System.Drawing.Color.White;
+            this.lblMsg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMsg.Location = new System.Drawing.Point(349, 36);
+            this.lblMsg.Location = new System.Drawing.Point(356, 36);
             this.lblMsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(289, 49);
-            this.lblMsg.TabIndex = 24;
+            this.lblMsg.TabIndex = 0;
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // betlbl
@@ -315,7 +336,7 @@ namespace SlotMachine
             this.btnCASH.BackColor = System.Drawing.Color.LightGreen;
             this.btnCASH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCASH.Location = new System.Drawing.Point(32, 116);
-            this.btnCASH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCASH.Margin = new System.Windows.Forms.Padding(4);
             this.btnCASH.Name = "btnCASH";
             this.btnCASH.Size = new System.Drawing.Size(131, 82);
             this.btnCASH.TabIndex = 35;
@@ -333,8 +354,8 @@ namespace SlotMachine
             this.btnAutoSpin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnAutoSpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutoSpin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAutoSpin.Location = new System.Drawing.Point(1172, 428);
-            this.btnAutoSpin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAutoSpin.Location = new System.Drawing.Point(1134, 428);
+            this.btnAutoSpin.Margin = new System.Windows.Forms.Padding(4);
             this.btnAutoSpin.Name = "btnAutoSpin";
             this.btnAutoSpin.Size = new System.Drawing.Size(145, 106);
             this.btnAutoSpin.TabIndex = 37;
@@ -344,16 +365,17 @@ namespace SlotMachine
             // 
             // timer2
             // 
-            this.timer2.Interval = 1000;
+            this.timer2.Interval = 300;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // btnInfo
             // 
+            this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfo.Location = new System.Drawing.Point(32, 21);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(131, 41);
             this.btnInfo.TabIndex = 38;
-            this.btnInfo.Text = "INFO";
+            this.btnInfo.Text = "PRIZE INFO";
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
@@ -368,19 +390,18 @@ namespace SlotMachine
             this.groupBox1.Controls.Add(this.btnBET);
             this.groupBox1.Controls.Add(this.btnBETPlus);
             this.groupBox1.Controls.Add(this.btnBETMinus);
-            this.groupBox1.Location = new System.Drawing.Point(216, 588);
+            this.groupBox1.Location = new System.Drawing.Point(179, 590);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(924, 131);
+            this.groupBox1.Size = new System.Drawing.Size(902, 131);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox2.Controls.Add(this.btnInfo);
             this.groupBox2.Controls.Add(this.btnCASH);
-            this.groupBox2.Location = new System.Drawing.Point(42, 336);
+            this.groupBox2.Location = new System.Drawing.Point(40, 336);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 230);
             this.groupBox2.TabIndex = 40;
@@ -414,6 +435,8 @@ namespace SlotMachine
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PlayForm";
             this.Text = "PlayForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PlayForm_FormClosed);
             this.Load += new System.EventHandler(this.PlayForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();

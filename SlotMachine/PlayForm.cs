@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SlotMachine
@@ -9,6 +10,7 @@ namespace SlotMachine
     {
         public Random random { get; set; }
         public int timerCount { get; set; }
+        public int timer2Count { get; set; }
         public int credit { get; set; }
         public int bet { get; set; }
         public int a { get; set; }
@@ -21,18 +23,7 @@ namespace SlotMachine
         public int h { get; set; }
         public int i { get; set; }
         public bool timerFlag { get; set; }
-        public int temp;
-
-        // string grozje = Path.GetFullPath(@"SlotMachine\Resources\grozje.png");
-        //string dzveza = Path.GetFullPath(@"SlotMachine\Resources\dzvezda.png");
-        //string limon = Path.GetFullPath(@"SlotMachine\Resources\limon.png");
-        //string dolar = Path.GetFullPath(@"SlotMachine\Resources\dolar.png");
-        //string watermelon = Path.GetFullPath(@"SlotMachine\Resources\watermelon.png");
-        //string jabuka = Path.GetFullPath(@"SlotMachine\Resources\jabuka.png");
-        //string cresa = Path.GetFullPath(@"SlotMachine\Resources\cresa.png");
-        //string seven = Path.GetFullPath(@"SlotMachine\Resources\seven.png");
-
-
+        
 
         public PlayForm()
         {
@@ -52,8 +43,8 @@ namespace SlotMachine
             credit = 50;
             bet = 5;
             timerCount = 0;
-            temp = 0;
-            this.DoubleBuffered = true;
+            timer2Count = 0;
+            DoubleBuffered = true;
         }
 
 
@@ -73,20 +64,7 @@ namespace SlotMachine
             timer1.Interval = 50;
             playRollingSound();
         }
-        private void btnSPIH2(object sender, EventArgs e)
-        {
-
-            btnBETPlus.Enabled = false;
-            btnBETMinus.Enabled = false;
-            btnPAY.Enabled = false;
-            btnCASH.Enabled = true;
-            timer1.Enabled = true;
-            timer1.Interval = 300;
-            playRollingSound();
-        }
-
-
-
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -95,9 +73,27 @@ namespace SlotMachine
         private void dobivka(int koeficient,int dupliranje=1)
         {
             playWinSound();
-            lblMsg.Text = "Jackpot! You won " + (dupliranje*koeficient * bet).ToString() + " $!!!";
-            credit = credit +(dupliranje* (koeficient * bet));
+            timer2.Interval = 3000;
+            if (koeficient==10)
+            {
+                lblMsg.Text = "JACKPOT! You won " + (dupliranje * koeficient * bet).ToString() + " $!!!";
+            }
+            if(koeficient==5)
+            {
+                lblMsg.Text = "MEGA WIN! You won " + (dupliranje * koeficient * bet).ToString() + " $!!!";
+            }
+            if(koeficient==3)
+            {
+                lblMsg.Text = "BIG WIN! You won " + (dupliranje * koeficient * bet).ToString() + " $!!!";
+            }
+            if(koeficient==2)
+            {
+                lblMsg.Text = "WIN! You won " + (dupliranje * koeficient * bet).ToString() + " $!!!";
+            }
+            
+            credit = credit + (dupliranje*koeficient*bet);
             infolbl.Text = "CREDIT: " + credit.ToString() + " $";
+                        
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -107,15 +103,15 @@ namespace SlotMachine
             if (timerCount < 200)
             {
                 
-                a = 1+random.Next(9);
-                b = 1 + random.Next(9);
-                c = 1 + random.Next(9);
-                d = 1 + random.Next(9);
-                f = 1 + random.Next(9);
-                g = 1 + random.Next(9);
-                h = 1 + random.Next(9);
-                i = 1 + random.Next(9);
-                j = 1 + random.Next(9);
+                a = 1 + random.Next(8);
+                b = 1 + random.Next(8);
+                c = 1 + random.Next(8);
+                d = 1 + random.Next(8);
+                f = 1 + random.Next(8);
+                g = 1 + random.Next(8);
+                h = 1 + random.Next(8);
+                i = 1 + random.Next(8);
+                j = 1 + random.Next(8);
                 
 
                 switch (a)
@@ -380,10 +376,10 @@ namespace SlotMachine
                 timer1.Enabled = false;
                 timerCount = 0;
                
-                if ((a == b) && (a == c))
+                if ((a == b) && (a == c)) //prv red e ist
                 {
-                    //prv red e ist
-                    if ((d == f) && (f == g) && (a == d)&&(a==h)&&(h==i)&&(i==j))
+                    
+                    if ((d == f) && (f == g) && (a == d)&&(a==h)&&(h==i)&&(i==j)) //site redovi se isti
                     {
                         if (a == 1)
                         {
@@ -425,11 +421,11 @@ namespace SlotMachine
                             dobivka(5,3);
                             //lubenica
                         }
-                        //site redovi se isti
+                        
                         
 
                     }
-                    else if((d == f) && (f == g) && (a == d))
+                    else if((d == f) && (f == g) && (a == d)) //prv i vtor
                     {
                         if (a == 1)
                         {
@@ -471,11 +467,11 @@ namespace SlotMachine
                             dobivka(5, 2);
                             //lubenica
                         }
-                        //prv i vtor
+                        
                     }
-                    else if((h == i) && (i == j) && (a == h))
+                    else if((h == i) && (i == j) && (a == h)) //prv i tret se isti
                     {
-                        //prv i tret se isti
+                        
                         if (a == 1)
                         {
                             //cresa
@@ -561,10 +557,10 @@ namespace SlotMachine
                         }
                     }
                 }
-                if ((d == f) && (f == g))
+                else if((d == f) && (f == g)) //vtor red e ist
                 {
-                    //vtor red e ist
-                    if((h == i) && (i == j) && (h == d))
+                    
+                    if((h == i) && (i == j) && (h == d)) //vtor i tret red se isti
                     {
                         if (d == 1)
                         {
@@ -606,7 +602,7 @@ namespace SlotMachine
                             dobivka(5, 2);
                             //lubenica
                         }
-                        //vtor i tret red se isti
+                        
                     }
                     else
                     {
@@ -653,9 +649,9 @@ namespace SlotMachine
                     }
 
                 }
-                if ((h == i) && (i == j))
+                else if((h == i) && (i == j)) //tret red e ist
                 {
-                    //tret red e ist
+                    
                     if (h == 1)
                     {
                         //cresa
@@ -697,11 +693,11 @@ namespace SlotMachine
                         //lubenica
                     }
                 }
-                if ((a == f) && (f == j))
+                else if((a == f) && (f == j))//glavna diagonala
                 {
 
-                    //glavna diagonala
-                    if((c == f) && (f == h) && (h == a))
+                    
+                    if((c == f) && (f == h) && (h == a)) //glavna i sporedna
                     {
                         if (a == 1)
                         {
@@ -743,7 +739,7 @@ namespace SlotMachine
                             dobivka(5,2);
                             //lubenica
                         }
-                        //glavna i sporedna
+                        
                     }
                     else
                     {
@@ -789,9 +785,9 @@ namespace SlotMachine
                         }
                     }
                 }
-                if ((c == f) && (f == h))
+                else if ((c == f) && (f == h)) //sporedna diagonala
                 {
-                    //sporedna diagonala
+                    
                     if (h == 1)
                     {
                         //cresa
@@ -833,12 +829,13 @@ namespace SlotMachine
                         //lubenica
                     }
                 }
-
                 else
                 {
                     lblMsg.Text = "No luck, try again";
                     credit = credit - bet;
                     infolbl.Text = "CREDIT: " + credit.ToString() + " $";
+                    timer2.Interval = 2300;
+
                     if (credit < bet)
                     {
                         btnSPIN.Enabled = false;
@@ -930,9 +927,6 @@ namespace SlotMachine
                 btnAutoSpin.Enabled = false;
                 btnBETMinus.Enabled = false;
             }
-
-
-
         }
 
         private void btnBETPlus_Click(object sender, EventArgs e)
@@ -945,18 +939,15 @@ namespace SlotMachine
                 betlbl.Text = "BET: " + bet.ToString() + " $";
             }
             btnBETMinus.Enabled = true;
-
         }
 
         private void btnPAY_Click(object sender, EventArgs e)
         {
-
             btnINPUT.Enabled = false;
             btnINPUTPlus.Enabled = false;
             btnINPUTMinus.Enabled = false;
             btnPAY.Enabled = false;
             btnBET.Enabled = true;
-
         }
 
         private void btnCASH_Click(object sender, EventArgs e)
@@ -1008,45 +999,46 @@ namespace SlotMachine
 
             SoundPlayer winSound = new SoundPlayer(dobivka_path);
             winSound.Play();
-           
         }
 
 
         private void btnAutoSpin_Click(object sender, EventArgs e)
         {
-
-            
             if (credit==0 || credit<bet)
             {
                 timer1.Stop();
                 timer2.Stop();
-                temp = 0;
+                timer2Count = 0;
                 timerFlag = false;
             }
              if(!timerFlag)
             {
                 timerFlag = true;
-                
                 timer2.Start();
-                if(temp > 0)
-                    timer2.Interval = 3200;
-                temp++;
-
             }
             else
             {
                 timerFlag = false;
+                timer2Count = 0;
                 timer1.Stop();
                 timer2.Stop();
-                temp = 0;
             }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-
-            btnSPIN_Click(sender, e);
+            if(timer2Count==0)
+            {
+                timer2.Interval = 300;
+                btnSPIN_Click(sender, e);
+            }
+            else
+            {
+                timer2.Interval = 2300;
+                btnSPIN_Click(sender, e);
+            }
             
+            timer2Count++;
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
@@ -1055,9 +1047,19 @@ namespace SlotMachine
             info.ShowDialog();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
+        private void PlayForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timerFlag = false;
+            timer1.Stop();
+            timer2.Stop();
+        }
+
+        private void PlayForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timerFlag = false;
+            timer1.Stop();
+            timer2.Stop();
         }
     }
 }

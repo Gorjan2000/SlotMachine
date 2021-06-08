@@ -26,7 +26,7 @@ namespace SlotMachine
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Dali ste sigurni deka sakate da izlezete?", "Exit Slot Machine", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure want to exit?", "Exit Slot Machine", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -34,7 +34,14 @@ namespace SlotMachine
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Instrukcii za igranje.", "Info Slot Machine");
+            MessageBox.Show("1. Click on Input Money\n" +
+                            "2. Select starting amount of money with +/-\n" +
+                            "3. Click PAY TABLE button\n" +
+                            "4. Click on BET button\n" +
+                            "5. Select wanted bet with +/-\n" +
+                            "6. To play click on SPIN or AUTO SPIN\n" +
+                            "NOTE: If you want to change the bet during the game," +
+                            "\nfirst you must click on BET button and then change with +/-", "Info Slot Machine");
         }
 
        
