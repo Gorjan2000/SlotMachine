@@ -79,12 +79,19 @@ namespace SlotMachine
         {
             timer1.Enabled = false;
         }
+        private void dobivka(int koeficient,int dupliranje=1)
+        {
+            playWinSound();
+            lblMsg.Text = "Jackpot! You won " + (dupliranje*koeficient * bet).ToString() + " $!!!";
+            credit = credit +(dupliranje* (koeficient * bet));
+            infolbl.Text = "CREDIT: " + credit.ToString() + " $";
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             
             timerCount = timerCount + 10;
-            if (timerCount < 250)
+            if (timerCount < 500)
             {
                 
                 a = 1+random.Next(9);
@@ -359,14 +366,461 @@ namespace SlotMachine
                 
                 timer1.Enabled = false;
                 timerCount = 0;
+               
                 if ((a == b) && (a == c))
                 {
-                    playWinSound();
-                    lblMsg.Text = "Jackpot! You won " + (2 * bet).ToString() + " $!!!";
-                    credit = credit + 2*bet;
-                    infolbl.Text = "CREDIT: " + credit.ToString() + " $";
+                    //prv red e ist
+                    if ((d == f) && (f == g) && (a == d)&&(a==h)&&(h==i)&&(i==j))
+                    {
+                        if (a == 1)
+                        {
+                            //cresa
+                            dobivka(2,3);
+                        }
+                        if (a == 2)
+                        {
+                            //dolar
+                            dobivka(3,3);
+                        }
+                        if (a == 3)
+                        {
+                            dobivka(2,3);
+                            //jabuka
+                        }
+                        if (a == 4)
+                        {
+                            dobivka(2,3);
+                            //limon
+                        }
+                        if (a == 5)
+                        {
+                            dobivka(5,3);
+                            //grozje
+                        }
+                        if (a == 6)
+                        {
+                            dobivka(5,3);
+                            //dzvezda
+                        }
+                        if (a == 7)
+                        {
+                            dobivka(10,3);
+                            //seven
+                        }
+                        if (a == 8)
+                        {
+                            dobivka(5,3);
+                            //lubenica
+                        }
+                        //site redovi se isti
+                        
+
+                    }
+                    else if((d == f) && (f == g) && (a == d))
+                    {
+                        if (a == 1)
+                        {
+                            //cresa
+                            dobivka(2, 2);
+                        }
+                        if (a == 2)
+                        {
+                            //dolar
+                            dobivka(3, 2);
+                        }
+                        if (a == 3)
+                        {
+                            dobivka(2, 2);
+                            //jabuka
+                        }
+                        if (a == 4)
+                        {
+                            dobivka(2, 2);
+                            //limon
+                        }
+                        if (a == 5)
+                        {
+                            dobivka(5, 2);
+                            //grozje
+                        }
+                        if (a == 6)
+                        {
+                            dobivka(5, 2);
+                            //dzvezda
+                        }
+                        if (a == 7)
+                        {
+                            dobivka(10, 2);
+                            //seven
+                        }
+                        if (a == 8)
+                        {
+                            dobivka(5, 2);
+                            //lubenica
+                        }
+                        //prv i vtor
+                    }
+                    else if((h == i) && (i == j) && (a == h))
+                    {
+                        //prv i tret se isti
+                        if (a == 1)
+                        {
+                            //cresa
+                            dobivka(2, 2);
+                        }
+                        if (a == 2)
+                        {
+                            //dolar
+                            dobivka(3, 2);
+                        }
+                        if (a == 3)
+                        {
+                            dobivka(2, 2);
+                            //jabuka
+                        }
+                        if (a == 4)
+                        {
+                            dobivka(2, 2);
+                            //limon
+                        }
+                        if (a == 5)
+                        {
+                            dobivka(5, 2);
+                            //grozje
+                        }
+                        if (a == 6)
+                        {
+                            dobivka(5, 2);
+                            //dzvezda
+                        }
+                        if (a == 7)
+                        {
+                            dobivka(10, 2);
+                            //seven
+                        }
+                        if (a == 8)
+                        {
+                            dobivka(5, 2);
+                            //lubenica
+                        }
+                    }
+                    else
+                    {
+                        if (a == 1)
+                        {
+                            //cresa
+                            dobivka(2);
+                        }
+                        if (a == 2)
+                        {
+                            //dolar
+                            dobivka(3);
+                        }
+                        if (a == 3)
+                        {
+                            dobivka(2);
+                            //jabuka
+                        }
+                        if (a == 4)
+                        {
+                            dobivka(2);
+                            //limon
+                        }
+                        if (a == 5)
+                        {
+                            dobivka(5);
+                            //grozje
+                        }
+                        if (a == 6)
+                        {
+                            dobivka(5);
+                            //dzvezda
+                        }
+                        if (a == 7)
+                        {
+                            dobivka(10);
+                            //seven
+                        }
+                        if (a == 8)
+                        {
+                            dobivka(5);
+                            //lubenica
+                        }
+                    }
+                }
+                if ((d == f) && (f == g))
+                {
+                    //vtor red e ist
+                    if((h == i) && (i == j) && (h == d))
+                    {
+                        if (d == 1)
+                        {
+                            //cresa
+                            dobivka(2, 2);
+                        }
+                        if (d == 2)
+                        {
+                            //dolar
+                            dobivka(3, 2);
+                        }
+                        if (d == 3)
+                        {
+                            dobivka(2, 2);
+                            //jabuka
+                        }
+                        if (d == 4)
+                        {
+                            dobivka(2, 2);
+                            //limon
+                        }
+                        if (d == 5)
+                        {
+                            dobivka(5, 2);
+                            //grozje
+                        }
+                        if (d == 6)
+                        {
+                            dobivka(5, 2);
+                            //dzvezda
+                        }
+                        if (d == 7)
+                        {
+                            dobivka(10, 2);
+                            //seven
+                        }
+                        if (d == 8)
+                        {
+                            dobivka(5, 2);
+                            //lubenica
+                        }
+                        //vtor i tret red se isti
+                    }
+                    else
+                    {
+                        if (d == 1)
+                        {
+                            //cresa
+                            dobivka(2, 2);
+                        }
+                        if (d == 2)
+                        {
+                            //dolar
+                            dobivka(3, 2);
+                        }
+                        if (d == 3)
+                        {
+                            dobivka(2, 2);
+                            //jabuka
+                        }
+                        if (d == 4)
+                        {
+                            dobivka(2, 2);
+                            //limon
+                        }
+                        if (d == 5)
+                        {
+                            dobivka(5, 2);
+                            //grozje
+                        }
+                        if (d == 6)
+                        {
+                            dobivka(5, 2);
+                            //dzvezda
+                        }
+                        if (d == 7)
+                        {
+                            dobivka(10, 2);
+                            //seven
+                        }
+                        if (d == 8)
+                        {
+                            dobivka(5, 2);
+                            //lubenica
+                        }
+                    }
 
                 }
+                if ((h == i) && (i == j))
+                {
+                    //tret red e ist
+                    if (h == 1)
+                    {
+                        //cresa
+                        dobivka(2);
+                    }
+                    if (h == 2)
+                    {
+                        //dolar
+                        dobivka(3);
+                    }
+                    if (h == 3)
+                    {
+                        dobivka(2);
+                        //jabuka
+                    }
+                    if (h == 4)
+                    {
+                        dobivka(2);
+                        //limon
+                    }
+                    if (h == 5)
+                    {
+                        dobivka(5);
+                        //grozje
+                    }
+                    if (h == 6)
+                    {
+                        dobivka(5);
+                        //dzvezda
+                    }
+                    if (h == 7)
+                    {
+                        dobivka(10);
+                        //seven
+                    }
+                    if (h == 8)
+                    {
+                        dobivka(5);
+                        //lubenica
+                    }
+                }
+                if ((a == f) && (f == j))
+                {
+
+                    //glavna diagonala
+                    if((c == f) && (f == h) && (h == a))
+                    {
+                        if (a == 1)
+                        {
+                            //cresa
+                            dobivka(2,2);
+                        }
+                        if (a == 2)
+                        {
+                            //dolar
+                            dobivka(3,2);
+                        }
+                        if (a == 3)
+                        {
+                            dobivka(2,2);
+                            //jabuka
+                        }
+                        if (a == 4)
+                        {
+                            dobivka(2,2);
+                            //limon
+                        }
+                        if (a == 5)
+                        {
+                            dobivka(5,2);
+                            //grozje
+                        }
+                        if (a == 6)
+                        {
+                            dobivka(5,2);
+                            //dzvezda
+                        }
+                        if (a == 7)
+                        {
+                            dobivka(10,2);
+                            //seven
+                        }
+                        if (a == 8)
+                        {
+                            dobivka(5,2);
+                            //lubenica
+                        }
+                        //glavna i sporedna
+                    }
+                    else
+                    {
+                        if (a == 1)
+                        {
+                            //cresa
+                            dobivka(2);
+                        }
+                        if (a == 2)
+                        {
+                            //dolar
+                            dobivka(3);
+                        }
+                        if (a == 3)
+                        {
+                            dobivka(2);
+                            //jabuka
+                        }
+                        if (a == 4)
+                        {
+                            dobivka(2);
+                            //limon
+                        }
+                        if (a == 5)
+                        {
+                            dobivka(5);
+                            //grozje
+                        }
+                        if (a == 6)
+                        {
+                            dobivka(5);
+                            //dzvezda
+                        }
+                        if (a == 7)
+                        {
+                            dobivka(10);
+                            //seven
+                        }
+                        if (a == 8)
+                        {
+                            dobivka(5);
+                            //lubenica
+                        }
+                    }
+                }
+                if ((c == f) && (f == h))
+                {
+                    //sporedna diagonala
+                    if (h == 1)
+                    {
+                        //cresa
+                        dobivka(2);
+                    }
+                    if (h == 2)
+                    {
+                        //dolar
+                        dobivka(3);
+                    }
+                    if (h == 3)
+                    {
+                        dobivka(2);
+                        //jabuka
+                    }
+                    if (h == 4)
+                    {
+                        dobivka(2);
+                        //limon
+                    }
+                    if (h == 5)
+                    {
+                        dobivka(5);
+                        //grozje
+                    }
+                    if (h == 6)
+                    {
+                        dobivka(5);
+                        //dzvezda
+                    }
+                    if (h == 7)
+                    {
+                        dobivka(10);
+                        //seven
+                    }
+                    if (h == 8)
+                    {
+                        dobivka(5);
+                        //lubenica
+                    }
+                }
+
                 else
                 {
                     lblMsg.Text = "No luck, try again";
@@ -409,7 +863,7 @@ namespace SlotMachine
 
         private void btnINPUTPlus_Click(object sender, EventArgs e)
         {
-            credit++;
+            credit+=5;
             infolbl.Text = "CREDIT: " + credit.ToString() + " $";
             btnPAY.Enabled = true;
             btnINPUTMinus.Enabled = true;
@@ -418,7 +872,7 @@ namespace SlotMachine
 
         private void btnINPUTMinus_Click(object sender, EventArgs e)
         {
-            if ((credit > 0) && (bet < credit)) credit--;
+            if ((credit > 0) && (bet < credit)) credit-=5;
             if (credit >= 0)
                 infolbl.Text = "CREDIT: " + credit.ToString() + " $";
             if (credit == 0)
@@ -450,7 +904,7 @@ namespace SlotMachine
 
         private void btnBETMinus_Click(object sender, EventArgs e)
         {
-            if (bet > 0) bet--;
+            if (bet > 0) bet-=5;
             if (bet <= credit)
             {
                 btnSPIN.Enabled = true;
@@ -474,7 +928,7 @@ namespace SlotMachine
             {
                 btnSPIN.Enabled = true;
                 btnAutoSpin.Enabled = true;
-                bet++;
+                bet+=5;
                 betlbl.Text = "BET: " + bet.ToString() + " $";
             }
             btnBETMinus.Enabled = true;
@@ -546,27 +1000,32 @@ namespace SlotMachine
 
         private void btnAutoSpin_Click(object sender, EventArgs e)
         {
-            timer2.Interval = 400;
-            
+
+            timer1.Interval = 300;
             if (credit==0 || credit<bet)
             {
+                timer1.Stop();
                 timer2.Stop();
                 timerFlag = false;
             }
-            if(!timerFlag)
+             if(!timerFlag)
             {
                 timerFlag = true;
+                timer1.Start();
                 timer2.Start();
+                
             }
             else
             {
                 timerFlag = false;
+                timer1.Stop();
                 timer2.Stop();
             }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+
             btnSPIN_Click(sender, e);
         }
     }
