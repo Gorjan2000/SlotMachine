@@ -21,6 +21,7 @@ namespace SlotMachine
         public int h { get; set; }
         public int i { get; set; }
         public bool timerFlag { get; set; }
+        public int temp;
 
         // string grozje = Path.GetFullPath(@"SlotMachine\Resources\grozje.png");
         //string dzveza = Path.GetFullPath(@"SlotMachine\Resources\dzvezda.png");
@@ -51,6 +52,7 @@ namespace SlotMachine
             credit = 50;
             bet = 5;
             timerCount = 0;
+            temp = 0;
             this.DoubleBuffered = true;
         }
 
@@ -1018,6 +1020,7 @@ namespace SlotMachine
             {
                 timer1.Stop();
                 timer2.Stop();
+                temp = 0;
                 timerFlag = false;
             }
              if(!timerFlag)
@@ -1025,7 +1028,9 @@ namespace SlotMachine
                 timerFlag = true;
                 
                 timer2.Start();
-                timer2.Interval = 3200;
+                if(temp > 0)
+                    timer2.Interval = 3200;
+                temp++;
 
             }
             else
@@ -1033,6 +1038,7 @@ namespace SlotMachine
                 timerFlag = false;
                 timer1.Stop();
                 timer2.Stop();
+                temp = 0;
             }
         }
 
@@ -1041,6 +1047,17 @@ namespace SlotMachine
 
             btnSPIN_Click(sender, e);
             
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            Info2 info = new Info2();
+            info.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
