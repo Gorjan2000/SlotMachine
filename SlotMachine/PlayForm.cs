@@ -71,6 +71,17 @@ namespace SlotMachine
             timer1.Interval = 50;
             playRollingSound();
         }
+        private void btnSPIH2(object sender, EventArgs e)
+        {
+
+            btnBETPlus.Enabled = false;
+            btnBETMinus.Enabled = false;
+            btnPAY.Enabled = false;
+            btnCASH.Enabled = true;
+            timer1.Enabled = true;
+            timer1.Interval = 300;
+            playRollingSound();
+        }
 
 
 
@@ -948,8 +959,8 @@ namespace SlotMachine
 
         private void btnCASH_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Thank you for playing!\n Would you like to play again?", "End of game", MessageBoxButtons.YesNo);
-            if (result1 == DialogResult.Yes)
+            DialogResult res = MessageBox.Show($"Thank you for playing! You won ${credit}. \n", "Ticket");
+            if (res == DialogResult.Yes)
             {
                 btnSPIN.Enabled = false;
                 btnAutoSpin.Enabled = false;
@@ -966,6 +977,7 @@ namespace SlotMachine
                 infolbl.Text = "CREDIT: ";
                 betlbl.Text = "BET: ";
                 lblMsg.Text = "";
+                this.Close();
             }
             else Application.Exit();
 
@@ -1001,7 +1013,7 @@ namespace SlotMachine
         private void btnAutoSpin_Click(object sender, EventArgs e)
         {
 
-            timer1.Interval = 300;
+            
             if (credit==0 || credit<bet)
             {
                 timer1.Stop();
@@ -1011,7 +1023,7 @@ namespace SlotMachine
              if(!timerFlag)
             {
                 timerFlag = true;
-                timer1.Start();
+                timer1.Interval = 500;
                 timer2.Start();
                 
             }
@@ -1025,8 +1037,9 @@ namespace SlotMachine
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-
-            btnSPIN_Click(sender, e);
+           
+            timer1.Start();
+            
         }
     }
 }
