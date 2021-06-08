@@ -102,7 +102,7 @@ namespace SlotMachine
         {
             
             timerCount = timerCount + 10;
-            if (timerCount < 500)
+            if (timerCount < 200)
             {
                 
                 a = 1+random.Next(9);
@@ -374,7 +374,7 @@ namespace SlotMachine
             }
             else
             {
-                
+             
                 timer1.Enabled = false;
                 timerCount = 0;
                
@@ -1023,9 +1023,10 @@ namespace SlotMachine
              if(!timerFlag)
             {
                 timerFlag = true;
-                timer1.Interval = 500;
-                timer2.Start();
                 
+                timer2.Start();
+                timer2.Interval = 3200;
+
             }
             else
             {
@@ -1037,8 +1038,8 @@ namespace SlotMachine
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-           
-            timer1.Start();
+
+            btnSPIN_Click(sender, e);
             
         }
     }
