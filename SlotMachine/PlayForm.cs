@@ -36,7 +36,7 @@ namespace SlotMachine
             btnINPUTMinus.Enabled = false;
             btnBETPlus.Enabled = false;
             btnBETMinus.Enabled = false;
-            btnPAY.Enabled = false;
+           
             btnCASH.Enabled = false;
             btnAutoSpin.Enabled = false;
             timerFlag = false;
@@ -60,7 +60,7 @@ namespace SlotMachine
             
             btnBETPlus.Enabled = false;
             btnBETMinus.Enabled = false;
-            btnPAY.Enabled = false;
+           
             btnCASH.Enabled = true;
             timer1.Enabled = true;
             timer1.Interval = 50;
@@ -888,8 +888,9 @@ namespace SlotMachine
 
             btnINPUTPlus.Enabled = true;
 
-            btnPAY.Enabled = true;
+            
             btnINPUT.Enabled = false;
+            btnBET.Enabled = true;
 
 
         }
@@ -900,7 +901,7 @@ namespace SlotMachine
         {
             credit+=5;
             infolbl.Text = "CREDIT: " + credit.ToString() + " $";
-            btnPAY.Enabled = true;
+            
             btnINPUTMinus.Enabled = true;
 
         }
@@ -914,7 +915,7 @@ namespace SlotMachine
             {
                 btnSPIN.Enabled = false;
                 btnAutoSpin.Enabled = false;
-                btnPAY.Enabled = false;
+               
             }
             if (credit == 5) btnINPUTMinus.Enabled = false;
 
@@ -932,7 +933,9 @@ namespace SlotMachine
             btnBETMinus.Enabled = true;
             betlbl.Text = "BET: " + bet.ToString() + " $";
 
-
+            btnINPUT.Enabled = false;
+            btnINPUTPlus.Enabled = false;
+            btnINPUTMinus.Enabled = false;
 
 
         }
@@ -966,14 +969,7 @@ namespace SlotMachine
             btnBETMinus.Enabled = true;
         }
 
-        private void btnPAY_Click(object sender, EventArgs e)
-        {
-            btnINPUT.Enabled = false;
-            btnINPUTPlus.Enabled = false;
-            btnINPUTMinus.Enabled = false;
-            btnPAY.Enabled = false;
-            btnBET.Enabled = true;
-        }
+        
 
         private void btnCASH_Click(object sender, EventArgs e)
         {
@@ -987,7 +983,7 @@ namespace SlotMachine
                 btnINPUTMinus.Enabled = false;
                 btnBETPlus.Enabled = false;
                 btnBETMinus.Enabled = false;
-                btnPAY.Enabled = false;
+              
                 btnCASH.Enabled = false;
                 btnINPUT.Enabled = true;
                 credit = 50;
