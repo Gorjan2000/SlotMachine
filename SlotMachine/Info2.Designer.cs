@@ -29,37 +29,38 @@ namespace SlotMachine
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Info2));
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.pbScatter = new System.Windows.Forms.PictureBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tb7 = new System.Windows.Forms.TextBox();
             this.pb7 = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.pbWatermelon = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbDollar = new System.Windows.Forms.PictureBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pbGrape = new System.Windows.Forms.PictureBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pbApple = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pbLemon = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pbCherry = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.pbWatermelon = new System.Windows.Forms.PictureBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pbDollar = new System.Windows.Forms.PictureBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pbGrape = new System.Windows.Forms.PictureBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.pbApple = new System.Windows.Forms.PictureBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
+            this.pbLemon = new System.Windows.Forms.PictureBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
+            this.pbCherry = new System.Windows.Forms.PictureBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbScatter)).BeginInit();
@@ -91,6 +92,27 @@ namespace SlotMachine
             this.groupBox8.TabIndex = 19;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Scatter";
+            // 
+            // textBox1
+            // 
+            this.textBox1.ForeColor = System.Drawing.Color.Red;
+            this.textBox1.Location = new System.Drawing.Point(37, 52);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(46, 38);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "3";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(62, 52);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(198, 38);
+            this.textBox3.TabIndex = 7;
+            this.textBox3.Text = "BET x5";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pbScatter
             // 
@@ -155,6 +177,17 @@ namespace SlotMachine
             this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
             // 
+            // textBox8
+            // 
+            this.textBox8.ForeColor = System.Drawing.Color.Red;
+            this.textBox8.Location = new System.Drawing.Point(6, 82);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(41, 34);
+            this.textBox8.TabIndex = 14;
+            this.textBox8.Text = "3";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pbWatermelon
             // 
             this.pbWatermelon.Location = new System.Drawing.Point(174, 21);
@@ -163,6 +196,16 @@ namespace SlotMachine
             this.pbWatermelon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbWatermelon.TabIndex = 4;
             this.pbWatermelon.TabStop = false;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(31, 82);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(168, 34);
+            this.textBox9.TabIndex = 13;
+            this.textBox9.Text = "BET x5";
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox1
             // 
@@ -176,6 +219,17 @@ namespace SlotMachine
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
+            // textBox6
+            // 
+            this.textBox6.ForeColor = System.Drawing.Color.Red;
+            this.textBox6.Location = new System.Drawing.Point(6, 87);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(41, 34);
+            this.textBox6.TabIndex = 12;
+            this.textBox6.Text = "3";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pbDollar
             // 
             this.pbDollar.Location = new System.Drawing.Point(174, 22);
@@ -184,6 +238,16 @@ namespace SlotMachine
             this.pbDollar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDollar.TabIndex = 4;
             this.pbDollar.TabStop = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(31, 87);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(168, 34);
+            this.textBox7.TabIndex = 11;
+            this.textBox7.Text = "BET x3";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox5
             // 
@@ -197,6 +261,17 @@ namespace SlotMachine
             this.groupBox5.TabIndex = 14;
             this.groupBox5.TabStop = false;
             // 
+            // textBox4
+            // 
+            this.textBox4.ForeColor = System.Drawing.Color.Red;
+            this.textBox4.Location = new System.Drawing.Point(6, 86);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(41, 34);
+            this.textBox4.TabIndex = 10;
+            this.textBox4.Text = "3";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pbGrape
             // 
             this.pbGrape.Location = new System.Drawing.Point(174, 21);
@@ -205,6 +280,16 @@ namespace SlotMachine
             this.pbGrape.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbGrape.TabIndex = 4;
             this.pbGrape.TabStop = false;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(31, 86);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(168, 34);
+            this.textBox5.TabIndex = 9;
+            this.textBox5.Text = "BET x5";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox4
             // 
@@ -218,6 +303,17 @@ namespace SlotMachine
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             // 
+            // textBox10
+            // 
+            this.textBox10.ForeColor = System.Drawing.Color.Red;
+            this.textBox10.Location = new System.Drawing.Point(199, 82);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(41, 34);
+            this.textBox10.TabIndex = 16;
+            this.textBox10.Text = "3";
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pbApple
             // 
             this.pbApple.Location = new System.Drawing.Point(-8, 21);
@@ -226,6 +322,16 @@ namespace SlotMachine
             this.pbApple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbApple.TabIndex = 4;
             this.pbApple.TabStop = false;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(224, 82);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(168, 34);
+            this.textBox11.TabIndex = 15;
+            this.textBox11.Text = "BET x2";
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox3
             // 
@@ -239,6 +345,17 @@ namespace SlotMachine
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             // 
+            // textBox12
+            // 
+            this.textBox12.ForeColor = System.Drawing.Color.Red;
+            this.textBox12.Location = new System.Drawing.Point(199, 87);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
+            this.textBox12.Size = new System.Drawing.Size(41, 34);
+            this.textBox12.TabIndex = 18;
+            this.textBox12.Text = "3";
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pbLemon
             // 
             this.pbLemon.Location = new System.Drawing.Point(-8, 22);
@@ -247,6 +364,16 @@ namespace SlotMachine
             this.pbLemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLemon.TabIndex = 4;
             this.pbLemon.TabStop = false;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(224, 87);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
+            this.textBox13.Size = new System.Drawing.Size(168, 34);
+            this.textBox13.TabIndex = 17;
+            this.textBox13.Text = "BET x2";
+            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox2
             // 
@@ -260,141 +387,6 @@ namespace SlotMachine
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             // 
-            // pbCherry
-            // 
-            this.pbCherry.Location = new System.Drawing.Point(-8, 21);
-            this.pbCherry.Name = "pbCherry";
-            this.pbCherry.Size = new System.Drawing.Size(197, 150);
-            this.pbCherry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCherry.TabIndex = 4;
-            this.pbCherry.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.Color.Red;
-            this.textBox1.Location = new System.Drawing.Point(37, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(46, 38);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "3";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(62, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(198, 38);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "BET x5";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            this.textBox4.ForeColor = System.Drawing.Color.Red;
-            this.textBox4.Location = new System.Drawing.Point(6, 86);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(41, 34);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.Text = "3";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(31, 86);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(168, 34);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.Text = "BET x5";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox6
-            // 
-            this.textBox6.ForeColor = System.Drawing.Color.Red;
-            this.textBox6.Location = new System.Drawing.Point(6, 87);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(41, 34);
-            this.textBox6.TabIndex = 12;
-            this.textBox6.Text = "3";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(31, 87);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(168, 34);
-            this.textBox7.TabIndex = 11;
-            this.textBox7.Text = "BET x3";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox8
-            // 
-            this.textBox8.ForeColor = System.Drawing.Color.Red;
-            this.textBox8.Location = new System.Drawing.Point(6, 82);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(41, 34);
-            this.textBox8.TabIndex = 14;
-            this.textBox8.Text = "3";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(31, 82);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(168, 34);
-            this.textBox9.TabIndex = 13;
-            this.textBox9.Text = "BET x5";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox10
-            // 
-            this.textBox10.ForeColor = System.Drawing.Color.Red;
-            this.textBox10.Location = new System.Drawing.Point(199, 82);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(41, 34);
-            this.textBox10.TabIndex = 16;
-            this.textBox10.Text = "3";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(224, 82);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(168, 34);
-            this.textBox11.TabIndex = 15;
-            this.textBox11.Text = "BET x2";
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox12
-            // 
-            this.textBox12.ForeColor = System.Drawing.Color.Red;
-            this.textBox12.Location = new System.Drawing.Point(199, 87);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(41, 34);
-            this.textBox12.TabIndex = 18;
-            this.textBox12.Text = "3";
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(224, 87);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(168, 34);
-            this.textBox13.TabIndex = 17;
-            this.textBox13.Text = "BET x2";
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // textBox14
             // 
             this.textBox14.ForeColor = System.Drawing.Color.Red;
@@ -405,6 +397,15 @@ namespace SlotMachine
             this.textBox14.TabIndex = 20;
             this.textBox14.Text = "3";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pbCherry
+            // 
+            this.pbCherry.Location = new System.Drawing.Point(-8, 21);
+            this.pbCherry.Name = "pbCherry";
+            this.pbCherry.Size = new System.Drawing.Size(197, 150);
+            this.pbCherry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCherry.TabIndex = 4;
+            this.pbCherry.TabStop = false;
             // 
             // textBox15
             // 
@@ -429,6 +430,8 @@ namespace SlotMachine
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Info2";
             this.Text = "Info2";
             this.groupBox8.ResumeLayout(false);

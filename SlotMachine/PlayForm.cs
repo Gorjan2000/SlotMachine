@@ -12,7 +12,7 @@ namespace SlotMachine
         public Random random { get; set; }
         public int timerCount { get; set; }
         public int timer2Count { get; set; }
-        public int credit { get; set; }
+        public int credit { get;  set; }
         public int bet { get; set; }
         public int a { get; set; }
         public int b { get; set; }
@@ -28,7 +28,7 @@ namespace SlotMachine
 
         public PlayForm()
         {
-            
+
             InitializeComponent();
             btnSPIN.Enabled = false;
             btnBET.Enabled = false;
@@ -36,7 +36,7 @@ namespace SlotMachine
             btnINPUTMinus.Enabled = false;
             btnBETPlus.Enabled = false;
             btnBETMinus.Enabled = false;
-           
+
             btnCASH.Enabled = false;
             btnAutoSpin.Enabled = false;
             timerFlag = false;
@@ -57,54 +57,54 @@ namespace SlotMachine
 
         private void btnSPIN_Click(object sender, EventArgs e)
         {
-            
+
             btnBETPlus.Enabled = false;
             btnBETMinus.Enabled = false;
-           
+
             btnCASH.Enabled = true;
             timer1.Enabled = true;
             timer1.Interval = 50;
             playRollingSound();
         }
-        
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Enabled = false;
         }
-        private void dobivka(int koeficient,int dupliranje=1)
+        private void dobivka(int koeficient, int dupliranje = 1)
         {
             playWinSound();
             timer2.Interval = 3000;
-            if (koeficient==10)
+            if (koeficient == 10)
             {
                 lblMsg.Text = "JACKPOT! You won " + (dupliranje * koeficient * bet).ToString() + " $!!!";
             }
-            if(koeficient==5)
+            if (koeficient == 5)
             {
                 lblMsg.Text = "MEGA WIN! You won " + (dupliranje * koeficient * bet).ToString() + " $!!!";
             }
-            if(koeficient==3)
+            if (koeficient == 3)
             {
                 lblMsg.Text = "BIG WIN! You won " + (dupliranje * koeficient * bet).ToString() + " $!!!";
             }
-            if(koeficient==2)
+            if (koeficient == 2)
             {
                 lblMsg.Text = "WIN! You won " + (dupliranje * koeficient * bet).ToString() + " $!!!";
             }
-            
-            credit = credit + (dupliranje*koeficient*bet);
+
+            credit = credit + (dupliranje * koeficient * bet);
             infolbl.Text = "CREDIT: " + credit.ToString() + " $";
-                        
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
             timerCount = timerCount + 10;
             if (timerCount < 200)
             {
-                
+
                 a = 1 + random.Next(8);
                 b = 1 + random.Next(8);
                 c = 1 + random.Next(8);
@@ -114,7 +114,7 @@ namespace SlotMachine
                 h = 1 + random.Next(8);
                 i = 1 + random.Next(8);
                 j = 1 + random.Next(8);
-                
+
 
                 switch (a)
                 {
@@ -142,7 +142,7 @@ namespace SlotMachine
                     case 8:
                         pb1.Image = Properties.Resources.watermelon;
                         break;
-                   
+
 
                 }
 
@@ -377,59 +377,59 @@ namespace SlotMachine
                 boksovi.Clear();
                 timer1.Enabled = false;
                 timerCount = 0;
-               
+
                 if ((a == b) && (a == c)) //prv red e ist
                 {
                     boksovi.Add(pb1);
                     boksovi.Add(pb2);
                     boksovi.Add(pb3);
-                    if ((d == f) && (f == g) && (a == d)&&(a==h)&&(h==i)&&(i==j)) //site redovi se isti
+                    if ((d == f) && (f == g) && (a == d) && (a == h) && (h == i) && (i == j)) //site redovi se isti
                     {
                         if (a == 1)
                         {
                             //cresa
-                            dobivka(2,3);
+                            dobivka(2, 3);
                         }
                         if (a == 2)
                         {
                             //dolar
-                            dobivka(3,3);
+                            dobivka(3, 3);
                         }
                         if (a == 3)
                         {
-                            dobivka(2,3);
+                            dobivka(2, 3);
                             //jabuka
                         }
                         if (a == 4)
                         {
-                            dobivka(2,3);
+                            dobivka(2, 3);
                             //limon
                         }
                         if (a == 5)
                         {
-                            dobivka(5,3);
+                            dobivka(5, 3);
                             //grozje
                         }
                         if (a == 6)
                         {
-                            dobivka(5,3);
+                            dobivka(5, 3);
                             //dzvezda
                         }
                         if (a == 7)
                         {
-                            dobivka(10,3);
+                            dobivka(10, 3);
                             //seven
                         }
                         if (a == 8)
                         {
-                            dobivka(5,3);
+                            dobivka(5, 3);
                             //lubenica
                         }
-                        
-                        
+
+
 
                     }
-                    else if((d == f) && (f == g) && (a == d)) //prv i vtor
+                    else if ((d == f) && (f == g) && (a == d)) //prv i vtor
                     {
                         if (a == 1)
                         {
@@ -475,7 +475,7 @@ namespace SlotMachine
                         boksovi.Add(pb5);
                         boksovi.Add(pb6);
                     }
-                    else if((h == i) && (i == j) && (a == h)) //prv i tret se isti
+                    else if ((h == i) && (i == j) && (a == h)) //prv i tret se isti
                     {
                         boksovi.Add(pb7);
                         boksovi.Add(pb8);
@@ -566,7 +566,7 @@ namespace SlotMachine
                     }
                     timer3.Start();
                 }
-                else if((d == f) && (f == g)) //vtor red e ist
+                else if ((d == f) && (f == g)) //vtor red e ist
                 {
                     boksovi.Add(pb4);
                     boksovi.Add(pb5);
@@ -616,7 +616,7 @@ namespace SlotMachine
                             dobivka(5, 2);
                             //lubenica
                         }
-                        
+
                     }
                     else
                     {
@@ -663,7 +663,7 @@ namespace SlotMachine
                     }
                     timer3.Start();
                 }
-                else if((h == i) && (i == j)) //tret red e ist
+                else if ((h == i) && (i == j)) //tret red e ist
                 {
                     boksovi.Add(pb7);
                     boksovi.Add(pb8);
@@ -710,7 +710,7 @@ namespace SlotMachine
                     }
                     timer3.Start();
                 }
-                else if((a == f) && (f == j))//glavna diagonala
+                else if ((a == f) && (f == j))//glavna diagonala
                 {
 
                     boksovi.Add(pb1);
@@ -723,44 +723,44 @@ namespace SlotMachine
                         if (a == 1)
                         {
                             //cresa
-                            dobivka(2,2);
+                            dobivka(2, 2);
                         }
                         if (a == 2)
                         {
                             //dolar
-                            dobivka(3,2);
+                            dobivka(3, 2);
                         }
                         if (a == 3)
                         {
-                            dobivka(2,2);
+                            dobivka(2, 2);
                             //jabuka
                         }
                         if (a == 4)
                         {
-                            dobivka(2,2);
+                            dobivka(2, 2);
                             //limon
                         }
                         if (a == 5)
                         {
-                            dobivka(5,2);
+                            dobivka(5, 2);
                             //grozje
                         }
                         if (a == 6)
                         {
-                            dobivka(5,2);
+                            dobivka(5, 2);
                             //dzvezda
                         }
                         if (a == 7)
                         {
-                            dobivka(10,2);
+                            dobivka(10, 2);
                             //seven
                         }
                         if (a == 8)
                         {
-                            dobivka(5,2);
+                            dobivka(5, 2);
                             //lubenica
                         }
-                        
+
                     }
                     else
                     {
@@ -895,23 +895,23 @@ namespace SlotMachine
 
         private void btnINPUTPlus_Click(object sender, EventArgs e)
         {
-            credit+=5;
+            credit += 5;
             infolbl.Text = "CREDIT: " + credit.ToString() + " $";
-            
+
             btnINPUTMinus.Enabled = true;
             playCoinInsert();
         }
 
         private void btnINPUTMinus_Click(object sender, EventArgs e)
         {
-            if ((credit > 0) && (bet < credit)) credit-=5;
+            if ((credit > 0) && (bet < credit)) credit -= 5;
             if (credit >= 0)
                 infolbl.Text = "CREDIT: " + credit.ToString() + " $";
             if (credit == 0)
             {
                 btnSPIN.Enabled = false;
                 btnAutoSpin.Enabled = false;
-               
+
             }
             if (credit == 5) btnINPUTMinus.Enabled = false;
             playCoinOut();
@@ -938,12 +938,12 @@ namespace SlotMachine
 
         private void btnBETMinus_Click(object sender, EventArgs e)
         {
-            if (bet > 0) bet-=5;
+            if (bet > 0) bet -= 5;
             if (bet <= credit)
             {
                 btnSPIN.Enabled = true;
                 btnAutoSpin.Enabled = true;
-            } 
+            }
             betlbl.Text = "BET: " + bet.ToString() + " $";
             if (bet == 0)
             {
@@ -960,39 +960,35 @@ namespace SlotMachine
             {
                 btnSPIN.Enabled = true;
                 btnAutoSpin.Enabled = true;
-                bet+=5;
+                bet += 5;
                 betlbl.Text = "BET: " + bet.ToString() + " $";
             }
             btnBETMinus.Enabled = true;
             playSoundEffect();
         }
 
-        
+
 
         private void btnCASH_Click(object sender, EventArgs e)
         {
             playCashOut();
-            DialogResult res = MessageBox.Show($"Thank you for playing! You won ${credit}. \n", "Ticket");
-            if (res == DialogResult.Yes)
-            {
-                btnSPIN.Enabled = false;
-                btnAutoSpin.Enabled = false;
-                btnBET.Enabled = false;
-                btnINPUTPlus.Enabled = false;
-                btnINPUTMinus.Enabled = false;
-                btnBETPlus.Enabled = false;
-                btnBETMinus.Enabled = false;
-              
-                btnCASH.Enabled = false;
-                btnINPUT.Enabled = true;
-                credit = 50;
-                bet = 5;
-                infolbl.Text = "CREDIT: ";
-                betlbl.Text = "BET: ";
-                lblMsg.Text = "";
-                this.Close();
-            }
-            else Application.Exit();
+            //DialogResult res = MessageBox.Show($"Thank you for playing! You won ${credit}. \n", "Ticket");
+            //if (res == DialogResult.Yes)
+            //{
+            Ticket ticket = new Ticket();
+            ticket.ShowDialog();
+            btnSPIN.Enabled = false;
+            btnAutoSpin.Enabled = false;
+            btnBET.Enabled = false;
+            btnINPUTPlus.Enabled = false;
+            btnINPUTMinus.Enabled = false;
+            btnBETPlus.Enabled = false;
+            btnBETMinus.Enabled = false;
+            btnCASH.Enabled = false;
+            btnINPUT.Enabled = true;
+            this.Close();
+            //}
+            //else Application.Exit();
 
         }
 
@@ -1074,14 +1070,14 @@ namespace SlotMachine
 
         private void btnAutoSpin_Click(object sender, EventArgs e)
         {
-            if (credit==0 || credit<bet)
+            if (credit == 0 || credit < bet)
             {
                 timer1.Stop();
                 timer2.Stop();
                 timer2Count = 0;
                 timerFlag = false;
             }
-             if(!timerFlag)
+            if (!timerFlag)
             {
                 timerFlag = true;
                 timer2.Start();
@@ -1097,7 +1093,7 @@ namespace SlotMachine
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if(timer2Count==0)
+            if (timer2Count == 0)
             {
                 timer2.Interval = 300;
                 btnSPIN_Click(sender, e);
@@ -1107,7 +1103,7 @@ namespace SlotMachine
                 timer2.Interval = 2300;
                 btnSPIN_Click(sender, e);
             }
-            
+
             timer2Count++;
         }
 
