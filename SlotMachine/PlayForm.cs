@@ -885,14 +885,10 @@ namespace SlotMachine
         {
             credit = 50;
             infolbl.Text = "CREDIT: " + "50 $";
-
             btnINPUTPlus.Enabled = true;
-
-            
             btnINPUT.Enabled = false;
             btnBET.Enabled = true;
-
-
+            playTapSound();
         }
 
 
@@ -903,7 +899,7 @@ namespace SlotMachine
             infolbl.Text = "CREDIT: " + credit.ToString() + " $";
             
             btnINPUTMinus.Enabled = true;
-
+            playCoinInsert();
         }
 
         private void btnINPUTMinus_Click(object sender, EventArgs e)
@@ -918,7 +914,7 @@ namespace SlotMachine
                
             }
             if (credit == 5) btnINPUTMinus.Enabled = false;
-
+            playCoinOut();
 
         }
 
@@ -937,7 +933,7 @@ namespace SlotMachine
             btnINPUTPlus.Enabled = false;
             btnINPUTMinus.Enabled = false;
 
-
+            playTapSound();
         }
 
         private void btnBETMinus_Click(object sender, EventArgs e)
@@ -955,6 +951,7 @@ namespace SlotMachine
                 btnAutoSpin.Enabled = false;
                 btnBETMinus.Enabled = false;
             }
+            playSoundEffect();
         }
 
         private void btnBETPlus_Click(object sender, EventArgs e)
@@ -967,12 +964,14 @@ namespace SlotMachine
                 betlbl.Text = "BET: " + bet.ToString() + " $";
             }
             btnBETMinus.Enabled = true;
+            playSoundEffect();
         }
 
         
 
         private void btnCASH_Click(object sender, EventArgs e)
         {
+            playCashOut();
             DialogResult res = MessageBox.Show($"Thank you for playing! You won ${credit}. \n", "Ticket");
             if (res == DialogResult.Yes)
             {
@@ -995,6 +994,56 @@ namespace SlotMachine
             }
             else Application.Exit();
 
+        }
+
+        private void playSoundEffect()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string click_path = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\SlotMachine\Resources\click.wav");
+            string path = Path.GetFullPath(click_path);
+
+            SoundPlayer click = new SoundPlayer(path);
+            click.Play();
+        }
+
+        private void playCashOut()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string cashOut_path = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\SlotMachine\Resources\cashout.wav");
+            string path = Path.GetFullPath(cashOut_path);
+
+            SoundPlayer chasOut = new SoundPlayer(path);
+            chasOut.Play();
+        }
+
+        private void playCoinOut()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string coin_path = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\SlotMachine\Resources\coin_out.wav");
+            string path = Path.GetFullPath(coin_path);
+
+            SoundPlayer coinOut = new SoundPlayer(path);
+            coinOut.Play();
+        }
+
+        private void playCoinInsert()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string coin_path = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\SlotMachine\Resources\coin_insert.wav");
+            string path = Path.GetFullPath(coin_path);
+
+            SoundPlayer coinInsert = new SoundPlayer(path);
+            coinInsert.Play();
+        }
+
+        private void playTapSound()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string tap = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\SlotMachine\Resources\rolling1.wav");
+            string tap_path = Path.GetFullPath(tap);
+
+            SoundPlayer tapSound = new SoundPlayer(tap_path);
+            tapSound.Play();
         }
 
         private void playRollingSound()
@@ -1065,6 +1114,7 @@ namespace SlotMachine
         private void btnInfo_Click(object sender, EventArgs e)
         {
             Info2 info = new Info2();
+            playTapSound();
             info.ShowDialog();
         }
 
