@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Media;
 using System.Threading;
@@ -23,7 +24,7 @@ namespace SlotMachine
         public int h { get; set; }
         public int i { get; set; }
         public bool timerFlag { get; set; }
-        
+        public List<PictureBox> boksovi { get; set; }
 
         public PlayForm()
         {
@@ -45,6 +46,7 @@ namespace SlotMachine
             timerCount = 0;
             timer2Count = 0;
             DoubleBuffered = true;
+            boksovi = new List<PictureBox>();
         }
 
 
@@ -372,13 +374,15 @@ namespace SlotMachine
             }
             else
             {
-             
+                boksovi.Clear();
                 timer1.Enabled = false;
                 timerCount = 0;
                
                 if ((a == b) && (a == c)) //prv red e ist
                 {
-                    
+                    boksovi.Add(pb1);
+                    boksovi.Add(pb2);
+                    boksovi.Add(pb3);
                     if ((d == f) && (f == g) && (a == d)&&(a==h)&&(h==i)&&(i==j)) //site redovi se isti
                     {
                         if (a == 1)
@@ -467,11 +471,15 @@ namespace SlotMachine
                             dobivka(5, 2);
                             //lubenica
                         }
-                        
+                        boksovi.Add(pb4);
+                        boksovi.Add(pb5);
+                        boksovi.Add(pb6);
                     }
                     else if((h == i) && (i == j) && (a == h)) //prv i tret se isti
                     {
-                        
+                        boksovi.Add(pb7);
+                        boksovi.Add(pb8);
+                        boksovi.Add(pb9);
                         if (a == 1)
                         {
                             //cresa
@@ -556,12 +564,18 @@ namespace SlotMachine
                             //lubenica
                         }
                     }
+                    timer3.Start();
                 }
                 else if((d == f) && (f == g)) //vtor red e ist
                 {
-                    
-                    if((h == i) && (i == j) && (h == d)) //vtor i tret red se isti
+                    boksovi.Add(pb4);
+                    boksovi.Add(pb5);
+                    boksovi.Add(pb6);
+                    if ((h == i) && (i == j) && (h == d)) //vtor i tret red se isti
                     {
+                        boksovi.Add(pb7);
+                        boksovi.Add(pb8);
+                        boksovi.Add(pb9);
                         if (d == 1)
                         {
                             //cresa
@@ -647,11 +661,13 @@ namespace SlotMachine
                             //lubenica
                         }
                     }
-
+                    timer3.Start();
                 }
                 else if((h == i) && (i == j)) //tret red e ist
                 {
-                    
+                    boksovi.Add(pb7);
+                    boksovi.Add(pb8);
+                    boksovi.Add(pb9);
                     if (h == 1)
                     {
                         //cresa
@@ -692,13 +708,18 @@ namespace SlotMachine
                         dobivka(5);
                         //lubenica
                     }
+                    timer3.Start();
                 }
                 else if((a == f) && (f == j))//glavna diagonala
                 {
 
-                    
-                    if((c == f) && (f == h) && (h == a)) //glavna i sporedna
+                    boksovi.Add(pb1);
+                    boksovi.Add(pb5);
+                    boksovi.Add(pb9);
+                    if ((c == f) && (f == h) && (h == a)) //glavna i sporedna
                     {
+                        boksovi.Add(pb3);
+                        boksovi.Add(pb7);
                         if (a == 1)
                         {
                             //cresa
@@ -784,10 +805,13 @@ namespace SlotMachine
                             //lubenica
                         }
                     }
+                    timer3.Start();
                 }
                 else if ((c == f) && (f == h)) //sporedna diagonala
                 {
-                    
+                    boksovi.Add(pb3);
+                    boksovi.Add(pb5);
+                    boksovi.Add(pb7);
                     if (h == 1)
                     {
                         //cresa
@@ -828,6 +852,7 @@ namespace SlotMachine
                         dobivka(5);
                         //lubenica
                     }
+                    timer3.Start();
                 }
                 else
                 {
@@ -1060,6 +1085,38 @@ namespace SlotMachine
             timerFlag = false;
             timer1.Stop();
             timer2.Stop();
+        }
+        int trepkanja = 0;
+        bool visible = true;
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (trepkanja == 9)
+            {
+                timer3.Stop();
+                trepkanja = 0;
+            }
+            else
+            {
+                trepkanja++;
+            }
+
+            if (visible == true)
+            {
+                foreach (PictureBox b in boksovi)
+                {
+                    b.Visible = false;
+                }
+                visible = false;
+            }
+            else
+            {
+                foreach (PictureBox b in boksovi)
+                {
+                    b.Visible = true;
+                }
+                visible = true;
+            }
         }
     }
 }
