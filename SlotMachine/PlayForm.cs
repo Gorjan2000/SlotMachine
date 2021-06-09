@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Media;
 using System.Threading;
@@ -50,10 +51,32 @@ namespace SlotMachine
             boksovi = new List<PictureBox>();
         }
 
+        private Size oldSize;
+        
 
+        protected override void OnResize(System.EventArgs e)
+        {
+            base.OnResize(e);
+
+            foreach (Control cnt in this.Controls)
+                ResizeAll(cnt, base.Size);
+
+            oldSize = base.Size;
+        }
+        private void ResizeAll(Control control, Size newSize)
+        {
+            int width = newSize.Width - oldSize.Width;
+            control.Left += (control.Left * width) / oldSize.Width;
+            control.Width += (control.Width * width) / oldSize.Width;
+
+            int height = newSize.Height - oldSize.Height;
+            control.Top += (control.Top * height) / oldSize.Height;
+            control.Height += (control.Height * height) / oldSize.Height;
+        }
         private void PlayForm_Load(object sender, EventArgs e)
         {
             timer1.Enabled = false;
+            oldSize = base.Size;
         }
 
         private void btnSPIN_Click(object sender, EventArgs e)
@@ -72,6 +95,7 @@ namespace SlotMachine
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Enabled = false;
+            oldSize = base.Size;
         }
         private void dobivka(int koeficient, int dupliranje = 1)
         {
@@ -1161,5 +1185,7 @@ namespace SlotMachine
                 visible = true;
             }
         }
+
+       
     }
 }

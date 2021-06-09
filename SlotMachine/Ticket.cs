@@ -32,6 +32,29 @@ namespace SlotMachine
 
         }
 
+        private Size oldSize;
+
+
+        protected override void OnResize(System.EventArgs e)
+        {
+            base.OnResize(e);
+
+            foreach (Control cnt in this.Controls)
+                ResizeAll(cnt, base.Size);
+
+            oldSize = base.Size;
+        }
+        private void ResizeAll(Control control, Size newSize)
+        {
+            int width = newSize.Width - oldSize.Width;
+            control.Left += (control.Left * width) / oldSize.Width;
+            control.Width += (control.Width * width) / oldSize.Width;
+
+            int height = newSize.Height - oldSize.Height;
+            control.Top += (control.Top * height) / oldSize.Height;
+            control.Height += (control.Height * height) / oldSize.Height;
+        }
+
         private void Ticket_Load(object sender, EventArgs e)
         {
             tbTime.Text = DateTime.Now.ToString("HH:mm:ss");
@@ -39,6 +62,7 @@ namespace SlotMachine
 
             string amount = ((PlayForm)f).credit.ToString();
             tbAmount.Text = string.Format("${0}.00", amount);
+            oldSize = base.Size;
         }
 
         private void button1_Click(object sender, EventArgs e)
