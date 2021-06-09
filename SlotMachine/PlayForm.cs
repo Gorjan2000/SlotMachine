@@ -125,7 +125,7 @@ namespace SlotMachine
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            
             timerCount = timerCount + 10;
             if (timerCount < 200)
             {

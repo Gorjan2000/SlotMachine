@@ -90,7 +90,7 @@ namespace SlotMachine
             this.btnSPIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSPIN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSPIN.Location = new System.Drawing.Point(1133, 592);
-            this.btnSPIN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSPIN.Margin = new System.Windows.Forms.Padding(4);
             this.btnSPIN.Name = "btnSPIN";
             this.btnSPIN.Size = new System.Drawing.Size(145, 106);
             this.btnSPIN.TabIndex = 16;
@@ -104,7 +104,7 @@ namespace SlotMachine
             this.btnINPUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnINPUT.ForeColor = System.Drawing.Color.Black;
             this.btnINPUT.Location = new System.Drawing.Point(11, 22);
-            this.btnINPUT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnINPUT.Margin = new System.Windows.Forms.Padding(4);
             this.btnINPUT.Name = "btnINPUT";
             this.btnINPUT.Size = new System.Drawing.Size(127, 82);
             this.btnINPUT.TabIndex = 17;
@@ -118,7 +118,7 @@ namespace SlotMachine
             this.btnINPUTMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnINPUTMinus.ForeColor = System.Drawing.Color.White;
             this.btnINPUTMinus.Location = new System.Drawing.Point(147, 70);
-            this.btnINPUTMinus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnINPUTMinus.Margin = new System.Windows.Forms.Padding(4);
             this.btnINPUTMinus.Name = "btnINPUTMinus";
             this.btnINPUTMinus.Size = new System.Drawing.Size(36, 34);
             this.btnINPUTMinus.TabIndex = 19;
@@ -132,7 +132,7 @@ namespace SlotMachine
             this.btnINPUTPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnINPUTPlus.ForeColor = System.Drawing.Color.White;
             this.btnINPUTPlus.Location = new System.Drawing.Point(147, 22);
-            this.btnINPUTPlus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnINPUTPlus.Margin = new System.Windows.Forms.Padding(4);
             this.btnINPUTPlus.Name = "btnINPUTPlus";
             this.btnINPUTPlus.Size = new System.Drawing.Size(36, 32);
             this.btnINPUTPlus.TabIndex = 18;
@@ -146,7 +146,7 @@ namespace SlotMachine
             this.btnBETMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBETMinus.ForeColor = System.Drawing.Color.White;
             this.btnBETMinus.Location = new System.Drawing.Point(847, 70);
-            this.btnBETMinus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBETMinus.Margin = new System.Windows.Forms.Padding(4);
             this.btnBETMinus.Name = "btnBETMinus";
             this.btnBETMinus.Size = new System.Drawing.Size(36, 34);
             this.btnBETMinus.TabIndex = 23;
@@ -160,7 +160,7 @@ namespace SlotMachine
             this.btnBETPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnBETPlus.ForeColor = System.Drawing.Color.White;
             this.btnBETPlus.Location = new System.Drawing.Point(847, 22);
-            this.btnBETPlus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBETPlus.Margin = new System.Windows.Forms.Padding(4);
             this.btnBETPlus.Name = "btnBETPlus";
             this.btnBETPlus.Size = new System.Drawing.Size(36, 32);
             this.btnBETPlus.TabIndex = 22;
@@ -174,7 +174,7 @@ namespace SlotMachine
             this.btnBET.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBET.ForeColor = System.Drawing.Color.Black;
             this.btnBET.Location = new System.Drawing.Point(719, 22);
-            this.btnBET.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBET.Margin = new System.Windows.Forms.Padding(4);
             this.btnBET.Name = "btnBET";
             this.btnBET.Size = new System.Drawing.Size(120, 82);
             this.btnBET.TabIndex = 21;
@@ -199,10 +199,10 @@ namespace SlotMachine
             this.betlbl.BackColor = System.Drawing.Color.Gainsboro;
             this.betlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.betlbl.ForeColor = System.Drawing.Color.Red;
-            this.betlbl.Location = new System.Drawing.Point(859, 7);
+            this.betlbl.Location = new System.Drawing.Point(827, 7);
             this.betlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.betlbl.Name = "betlbl";
-            this.betlbl.Size = new System.Drawing.Size(209, 37);
+            this.betlbl.Size = new System.Drawing.Size(241, 37);
             this.betlbl.TabIndex = 26;
             this.betlbl.Text = "BET: ";
             // 
@@ -214,7 +214,7 @@ namespace SlotMachine
             this.infolbl.Location = new System.Drawing.Point(295, 7);
             this.infolbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.infolbl.Name = "infolbl";
-            this.infolbl.Size = new System.Drawing.Size(209, 37);
+            this.infolbl.Size = new System.Drawing.Size(234, 37);
             this.infolbl.TabIndex = 25;
             this.infolbl.Text = "CREDIT: ";
             // 
@@ -322,7 +322,7 @@ namespace SlotMachine
             this.btnCASH.BackColor = System.Drawing.Color.LightGreen;
             this.btnCASH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCASH.Location = new System.Drawing.Point(32, 116);
-            this.btnCASH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCASH.Margin = new System.Windows.Forms.Padding(4);
             this.btnCASH.Name = "btnCASH";
             this.btnCASH.Size = new System.Drawing.Size(131, 82);
             this.btnCASH.TabIndex = 35;
@@ -341,7 +341,7 @@ namespace SlotMachine
             this.btnAutoSpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutoSpin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAutoSpin.Location = new System.Drawing.Point(1133, 428);
-            this.btnAutoSpin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAutoSpin.Margin = new System.Windows.Forms.Padding(4);
             this.btnAutoSpin.Name = "btnAutoSpin";
             this.btnAutoSpin.Size = new System.Drawing.Size(145, 106);
             this.btnAutoSpin.TabIndex = 37;

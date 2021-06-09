@@ -25,6 +25,7 @@ namespace SlotMachine
             playTapSound();
             PlayForm form = new PlayForm();
             form.ShowDialog();
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
