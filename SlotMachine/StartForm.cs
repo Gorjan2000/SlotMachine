@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace SlotMachine
 {
+    [Serializable]
     public partial class StartForm : Form
     {
         public StartForm()

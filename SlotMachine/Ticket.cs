@@ -14,11 +14,13 @@ using System.Windows.Forms;
 
 namespace SlotMachine
 {
+    [Serializable]
     public partial class Ticket : Form
     {
-        
+
         Form f = Application.OpenForms["PlayForm"];
         string path;
+      
         public Ticket()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace SlotMachine
             tbDate.Text = DateTime.UtcNow.Date.ToString("dd/MM/yyyy");
 
             string amount = ((PlayForm)f).credit.ToString();
-            tbAmount.Text = string.Format("${0},00",amount);
+            tbAmount.Text = string.Format("${0}.00", amount);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,15 +46,21 @@ namespace SlotMachine
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save Ticket";
             sfd.Filter = "Ticket (*.jpg)|*.jpg";
-            
+
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 path = sfd.FileName;
-                using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+
+                Bitmap Image = new Bitmap(this.Width, this.Height, PixelFormat.Format32bppArgb);
+                this.DrawToBitmap(Image, new Rectangle(0, 0, this.Width, this.Height));
+                Image.Save(path, System.Drawing.Imaging.ImageFormat.Png);
+                /*
+                using (FileStream stream = new FileStream(path, FileMode.Create))
                 {
-                    this.DrawToBitmap(bmp, new Rectangle(Point.Empty, bmp.Size));
-                    bmp.Save(path, ImageFormat.Png); 
+                    IFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(stream, (Ticket)this);
                 }
+                */
             }
         }
     }

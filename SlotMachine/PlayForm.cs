@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace SlotMachine
 {
+    [Serializable]
     public partial class PlayForm : Form
     {
         public Random random { get; set; }
