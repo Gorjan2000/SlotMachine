@@ -20,7 +20,7 @@ namespace SlotMachine
 
         Form f = Application.OpenForms["PlayForm"];
         string path;
-      
+
         public Ticket()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace SlotMachine
         }
 
         private Size oldSize;
-
+        private Graphics gfxScreenshot;
 
         protected override void OnResize(System.EventArgs e)
         {
@@ -75,16 +75,11 @@ namespace SlotMachine
             {
                 path = sfd.FileName;
 
-                Bitmap Image = new Bitmap(this.Width, this.Height, PixelFormat.Format32bppArgb);
-                this.DrawToBitmap(Image, new Rectangle(0, 0, this.Width, this.Height));
-                Image.Save(path, System.Drawing.Imaging.ImageFormat.Png);
-                /*
-                using (FileStream stream = new FileStream(path, FileMode.Create))
-                {
-                    IFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(stream, (Ticket)this);
-                }
-                */
+                Bitmap bmp = new Bitmap(this.Width, this.Height, PixelFormat.Format32bppArgb);
+                bmp = new Bitmap(this.Bounds.Width, this.Bounds.Height, PixelFormat.Format32bppArgb);
+                gfxScreenshot = Graphics.FromImage(bmp);
+                gfxScreenshot.CopyFromScreen(this.Bounds.X, this.Bounds.Y, 0, 0, this.Bounds.Size, CopyPixelOperation.SourceCopy);
+                bmp.Save(path, ImageFormat.Png);
             }
         }
     }
