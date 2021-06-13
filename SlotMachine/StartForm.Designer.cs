@@ -88,7 +88,7 @@ namespace SlotMachine
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "Slot Machine";
-            this.Load += new System.EventHandler(this.StartForm_Load);
+          
             this.ResumeLayout(false);
 
         }

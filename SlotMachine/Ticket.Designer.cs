@@ -72,6 +72,7 @@ namespace SlotMachine
             this.tbDate.TabIndex = 0;
             this.tbDate.Text = "label1";
             this.tbDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            
             // 
             // tbTime
             // 

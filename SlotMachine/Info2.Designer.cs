@@ -434,7 +434,7 @@ namespace SlotMachine
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Info2";
             this.Text = "Info2";
-            this.Load += new System.EventHandler(this.Info2_Load);
+           
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbScatter)).EndInit();
